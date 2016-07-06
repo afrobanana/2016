@@ -364,5 +364,7 @@ strong {
 }
 
 #intro {
-  background: url("images/site/intro-628x600.png") 0 0 no-repeat;
+  /*background: url("images/site/intro-628x600.png") 0 0 no-repeat;*/
+  background: url("images/site/intro-628x600.png") center center no-repeat;
+  background-size: cover;
 }
