@@ -10,7 +10,7 @@ body {
   font-size: 24px;
   line-height: 1.556;
   color: #333;
-  background: linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%);
+  background: linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%) fixed;
 }
 a {
   color: #fff;
@@ -28,16 +28,16 @@ strong {
   font-weight: normal;
 }
 .page {
-  position: fixed;
+  /*position: fixed;*/
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 0;
   overflow: auto;
-  display: none;
+  /*display: none;*/
 }
-.page:after {
+/*.page:after {
   position: fixed;
   right: 0;
   left: 0;
@@ -49,7 +49,7 @@ strong {
                                to(#000));
   z-index: 4;
   opacity: 0.5;
-}
+}*/
 .page.is-active {
   display: block;
 }
@@ -76,7 +76,7 @@ strong {
   padding: 0.5em 0;
   color: #fff;
   /*box-shadow: 0 0 10px #000;*/
-  z-index: 2;
+  z-index: 2000;
   font-size: 0.9em;
   line-height: 1;
   text-align: center;
@@ -208,7 +208,7 @@ strong {
   display: inline-block;
   vertical-align: middle;
 }
-#intro .section:after {
+/*#intro .section:after {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -216,7 +216,7 @@ strong {
   right: 0;
   left: 0;
   content: " ";
-}
+}*/
 #about .text p {
   text-align: left;
 }
@@ -367,4 +367,8 @@ strong {
   /*background: url("images/site/intro-628x600.png") 0 0 no-repeat;*/
   background: url("images/site/intro-628x600.png") center center no-repeat;
   background-size: cover;
+  height: 100%;
+}
+#lineup, .lineup-page {
+  display: none;
 }

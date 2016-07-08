@@ -175,13 +175,13 @@
 <body>
 <nav class="nav-global headroom">
   <ol>
-    <li class=""><a class="nav-item" href="#/intro">Home</a></li>
-    <li><a class="nav-item" href="#/timetable">Timetable</a></li>
+    <li class=""><a class="nav-item" href="#intro">Home</a></li>
+    <li><a class="nav-item" href="#timetable">Timetable</a></li>
     <!-- <li><a class="nav-item" href="#/lineup">Line-up</a></li> -->
-    <li><a class="nav-item" href="#/tickets">Tickets</a></li>
-    <li><a class="nav-item" href="#/location">Location</a></li>
-    <li><a class="nav-item" href="#/info">Facilities</a></li>
-    <li><a class="nav-item" href="#/about">About</a></li>
+    <li><a class="nav-item" href="#tickets">Tickets</a></li>
+    <li><a class="nav-item" href="#location">Location</a></li>
+    <li><a class="nav-item" href="#info">Facilities</a></li>
+    <li><a class="nav-item" href="#about">About</a></li>
     <!-- <li><a class="nav-item" href="#/sponsors">Sponsors</a></li> -->
     <!-- <li><a class="nav-item" href="#/volunteer">Get Involved!</a></li> -->
     <li><a class="nav-item" href="https://www.facebook.com/TheAfroBananaRepublic" target="_blank"><svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 100 100" overflow="visible" xml:space="preserve"><path fill="#C6E2D1" d="M50,0C22.386,0,0,22.386,0,50s22.386,50,50,50s50-22.386,50-50S77.614,0,50,0z M61.824,49.5h-7.592V77 H42.855V49.5h-5.688v-9.48h5.688v-5.688C42.855,26.6,46.066,22,55.184,22h7.594v9.479h-4.744c-3.551,0-3.787,1.325-3.787,3.797 l-0.014,4.743h8.6L61.824,49.5z"/></svg></a></li>
@@ -200,7 +200,7 @@
   </section>
 </section>
 
-<section id="lineup" class="page">
+<section id="lineup" name="/lineup" class="page">
   <section class="section">
     <section class="section-inner">
       <h1 class="page-title">Line-up</h1>
@@ -244,20 +244,6 @@
   </section>
 </section>
 
-<section id="location" class="page">
-  <section class="section">
-    <section class="section-inner">
-      <h1 class="page-title">Location</h1>
-      <div class="text">
-        <div v-html="location.text"></div>
-      </div>
-      <div class="location-map">
-        <a href="https://goo.gl/maps/4djk7" target="_blank"><span>Google Map</span><img src="images/bg_location.jpg"></a>
-      </div>
-    </section>
-  </section>
-</section>
-
 <section id="tickets" class="page">
   <section class="section">
     <section class="section-inner">
@@ -281,6 +267,20 @@
         <li>At the entrance of the festival grounds, your ticket will be exchanged for an appropriate single-day or two-day wristband. Do be sure to leave it on, as access back into the festival grounds will only be provided to those wearing the festival wristband and you will not be allowed into any part of the festival without it. </li>
         <li>The wristband is only valid if worn on your wrist and they are not transferable to another person. </li>
         <li>Damaged and lost wristbands cannot be replaced, so please do not remove between days, stretch or tamper with your wristband in any way.</li>
+      </div>
+    </section>
+  </section>
+</section>
+
+<section id="location" class="page">
+  <section class="section">
+    <section class="section-inner">
+      <h1 class="page-title">Location</h1>
+      <div class="text">
+        <div v-html="location.text"></div>
+      </div>
+      <div class="location-map">
+        <a href="https://goo.gl/maps/4djk7" target="_blank"><span>Google Map</span><img src="images/bg_location.jpg"></a>
       </div>
     </section>
   </section>
@@ -1189,31 +1189,34 @@
         abr.nav_global.removeClass('minimize');
       }
     }).on('hashchange', function() {
+      return
       var hash = (location.hash || '#/intro').split('#/')[1],
           subs = hash.split('/'),
           id = hash.replace(/\//g,  '__'),
           $el = $('#' + id);
 
-      $('.page.is-active, a.is-active').removeClass('is-active');
-      subs.forEach(function(sub) {
-        $('a[href="#/' + sub + '"]').addClass('is-active');
-      });
-      $('a[href="#/' + hash + '"]').addClass('is-active');
+      // $('.page.is-active, a.is-active').removeClass('is-active');
+      // subs.forEach(function(sub) {
+      //   $('a[href="#/' + sub + '"]').addClass('is-active');
+      // });
+      // $('a[href="#/' + hash + '"]').addClass('is-active');
       if (!abr.views.id) {
         // abr.views[id] = new Vue({
         //   el: '#' + id,
         //   data: abr.viewData[id]
         // });
       }
-      if (abr._headroom) {
-        abr._headroom.destroy();
-      }
-      abr._headroom = new Headroom($(".nav-global")[0], {
-        scroller: $el[0]
-      });
-      abr._headroom.init();
-      $el.addClass('is-active').scrollTop(0);
+      // if (abr._headroom) {
+      //   abr._headroom.destroy();
+      // }
+      // abr._headroom = new Headroom($(".nav-global")[0], {
+      //   scroller: $el[0]
+      // });
+      // abr._headroom.init();
+      // $el.addClass('is-active').scrollTop(0);
     }).trigger('resize').trigger('hashchange');
+      abr._headroom = new Headroom($(".nav-global")[0]);
+      abr._headroom.init();
 </script>
 </body>
 </html>
