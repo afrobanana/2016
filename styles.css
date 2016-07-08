@@ -27,6 +27,9 @@ img {
 strong {
   font-weight: normal;
 }
+.small {
+  font-size: 0.85em;
+}
 .page {
   /*position: fixed;*/
   top: 0;
@@ -155,6 +158,13 @@ strong {
   margin: 2em 0;
   text-align: center;
 }
+.staff-entries {
+  font-size: 0.85em;
+}
+/*.facilities-entries,
+.timetable-stages {
+  overflow: hidden;
+}*/
 .lineup-entry {
   display: inline-block;
   margin: 0.5em;
@@ -162,15 +172,12 @@ strong {
   vertical-align: top;
   line-height: 1;
 }
-.facilities-entries,
-.timetable-stages {
-  overflow: hidden;
-}
 .facilities-entry,
 .staff-entry,
 .timetable-stage {
   display: inline-block;
-  width: 20em;
+  /*width: 20em;*/
+  width: 33%;
   max-width: 100%;
   padding: 2%;
   vertical-align: top;
@@ -180,7 +187,7 @@ strong {
 .timetable-stage dt,
 .staff-entry dt {
   font-weight: bold;
-  font-size: 1.3em;
+  /*font-size: 1.3em;*/
   margin-bottom: 0.5em;
   color: #C6E2D1;
   background-color: rgba(0, 0, 0, 0.3);
@@ -194,7 +201,7 @@ strong {
   margin-bottom: 0;
 }
 .staff-entry {
-  width: 17em;
+  /*width: 17em;*/
 }
 .staff-entry a {
   color: inherit;
@@ -228,7 +235,7 @@ strong {
 }
 .lineup-entry-name {
   display: block;
-  font-size: 1.2em;
+  /*font-size: 1.2em;*/
   background-color: rgba(0, 0, 0, 0.4);
   text-decoration: none;
   position: relative;
@@ -274,7 +281,7 @@ strong {
   content: ")";
 }
 .page-subtitle {
-  font-size: 1.6em;
+  font-size: 1.3em;
   color: #673F46;
   line-height: 1;
   font-weight: normal;
@@ -292,12 +299,24 @@ strong {
   background-color: #91AA9B;
   opacity: 0.8;
 }
+#tickets .text,
 #volunteer .text,
-#location .text,
+/*#location .text,*/
 #about .text,
 .lineup-page .text {
   max-width: 32em;
   margin: 0 auto;
+}
+#location .text {
+  max-width: 90%;
+  margin: 0 auto;
+}
+#tickets .text.small {
+  text-align: left;
+  font-size: 0.65em;
+}
+#tickets .text.small ol {
+  /*list-style: none;*/
 }
 #about .text em {
   font-weight: bold;
@@ -355,7 +374,7 @@ strong {
 .col-right,
 .col-left {
   text-align: left;
-  font-size: 0.85em;
+  /*font-size: 0.85em;*/
   width: 47%;
 }
 .col-right {
