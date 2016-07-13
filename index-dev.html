@@ -21,7 +21,9 @@
   <meta property="og:description" content="Παρασκευή 12 και Σάββατο 13 Σεπτεμβρίου, Δάσος Αθαλάσσας, επαρχία Λευκωσίας, Τιμή εισόδου €15 (για μια μέρα), €20 (για δύο μέρες).">
   <meta property="description" content="Παρασκευή 12 και Σάββατο 13 Σεπτεμβρίου, Δάσος Αθαλάσσας, επαρχία Λευκωσίας, Τιμή εισόδου €15 (για μια μέρα), €20 (για δύο μέρες).">
   <meta name="keywords" content="The Afro Banana Republic, Cyprus">
-  <link href='//fonts.googleapis.com/css?family=Rajdhani:500,700' rel='stylesheet' type='text/css'>
+  <!-- <link href='//fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'> -->
+  <link href="https://fonts.googleapis.com/css?family=Flamenco|Finger+Paint|Open+Sans" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="styles.css">
   <style type="text/css">
     @media all and (max-width: 499px) {
@@ -43,7 +45,7 @@
         height: 103px;
       }
       .page-title {
-        font-size: 2.5em;
+        /*font-size: 2.5em;*/
       }
       .page-subtitle {
         font-size: 1.3em;
@@ -75,7 +77,7 @@
         height: 207px;
       }*/
       .page-title {
-        font-size: 3.5em;
+        /*font-size: 3.5em;*/
       }
       .page-subtitle {
         font-size: 1.5em;
@@ -107,7 +109,7 @@
         height: 207px;
       }*/
       .page-title {
-        font-size: 3.8em;
+        /*font-size: 3.8em;*/
       }
       .page-subtitle {
         font-size: 1.6em;
@@ -146,7 +148,7 @@
     /*.nav-global,*/
     .page,
     .section + .section {
-      background-size: cover;
+      /*background-size: cover;*/
     }
   </style>
 
@@ -177,10 +179,11 @@
   <ol>
     <li class=""><a class="nav-item" href="#intro">Home</a></li>
     <li><a class="nav-item" href="#timetable">Timetable</a></li>
+    <li><a class="nav-item" href="#experiences">Experiences</a></li>
     <!-- <li><a class="nav-item" href="#/lineup">Line-up</a></li> -->
-    <li><a class="nav-item" href="#tickets">Tickets</a></li>
-    <li><a class="nav-item" href="#location">Location</a></li>
-    <li><a class="nav-item" href="#info">Facilities</a></li>
+    <li><a class="nav-item" href="#info">Info</a></li>
+    <li><a class="nav-item" href="#location">Getting There</a></li>
+    <li><a class="nav-item" href="http://abr.ticket.com.cy/event/page/1" target="_blank">Tickets <em>Online!</em></a></li>
     <li><a class="nav-item" href="#about">About</a></li>
     <!-- <li><a class="nav-item" href="#/sponsors">Sponsors</a></li> -->
     <!-- <li><a class="nav-item" href="#/volunteer">Get Involved!</a></li> -->
@@ -212,38 +215,145 @@
 <section id="timetable" class="page">
   <section class="section">
     <section class="section-inner">
-      <h1 class="page-title">Friday 12<sup>th</sup></h1>
-      <div class="timetable-stages">
-        <dl class="timetable-stage" v-repeat="timetable.friday">
-          <dt>{{ $key }}</dt>
-          <dd v-repeat="entry:$value">
-              <span v-repeat="artist:entry.lineup">
-                <a href="#/lineup/{{ artist.$key }}">{{ artist.name }}</a>
-                <span v-if="$index !== entry.lineup.length - 1">&plus;<br></span>
-              </span>
-            &mdash;
-            <span>{{ entry.time }}</span>
+      <h1 class="page-title">Timetable</h1>
+
+      <div class="timetable-day">
+        <div class="timetable-day-info">
+          <h2 class="timetable-day-name">Friday 12<sup>th</sup></h2>
+          <p class="small">Doors Open at ...</p>
+          <p class="small">Doors Open at ...</p>
+        </div>
+        <div class="timetable-stages">
+          <dl class="timetable-stage" v-repeat="timetable.friday">
+            <dt>{{ $key }}</dt>
+            <dd v-repeat="entry:$value">
+                <span v-repeat="artist:entry.lineup">
+                  <a href="#/lineup/{{ artist.$key }}">{{ artist.name }}</a>
+                  <span v-if="$index !== entry.lineup.length - 1">&plus;<br></span>
+                </span>
+              &mdash;
+              <span>{{ entry.time }}</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="timetable-day">
+        <div class="timetable-day-info">
+          <h2 class="timetable-day-name">Saturday 13<sup>th</sup></h2>
+          <p class="small">Doors Open at ...</p>
+          <p class="small">Doors Close at ...</p>
+        </div>
+        <div class="timetable-stages">
+          <dl class="timetable-stage" v-repeat="timetable.saturday">
+            <dt>{{ $key }}</dt>
+            <dd v-repeat="entry:$value">
+                <span v-repeat="artist:entry.lineup">
+                  <a href="#/lineup/{{ artist.$key }}">{{ artist.name }}</a>
+                  <span v-if="$index !== entry.lineup.length - 1">&plus;<br></span>
+                </span>
+              &mdash;
+              <span>{{ entry.time }}</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+    </section>
+  </section>
+</section>
+
+
+<section id="info" class="page">
+  <section id="facilities" class="section">
+    <section class="section-inner">
+      <h1 class="page-title">Your Guide to ABR</h1>
+      <div>
+        <img src="http://placehold.it/900x400">
+      </div>
+      <div class="facilities-entries">
+        <dl class="facilities-entry">
+          <dt>Camping</dt>
+          <dd>
+            <p>Enjoy the glories of the great outdoors and make the most of the two-day experience by pitching up a tent or caravan under the cool shade of leafy eucalyptus and pine trees on the Festival campsite.</p>
+            <p>What to expect? </p>
+           <p> This year, the camping area has been upgraded and is more than double in size, with more showers and toilets to make the experience as pleasant as possible. What’s more, the camping area has been divided into different zones to best suit your needs, with an allocated ‘silent zone’ for those who just want to sleep and relax. There is also a limited capacity for caravans to set up base and accessible reserved space for disabled campers.</p>
+            <p>For your convenience, there are designated areas to pump up your mattress and a charging station – but please bring your own chargers/pumps!</p>
+          <p>Please remember:</p>
+          <ol>
+            <li>Turn off taps and showers when finished.</li>
+            <li>Don't leave rubbish or your entire camping gear behind!</li>
+            <li>Re-use your carrier bags.</li>
+            <li>Take recycling and rubbish bags with you and keep your campsite clean and tidy at all times.</li>
+            <li>No cooler boxes or drinks will be permitted into any area of the Festival Site.</li>
+            <li>Bring your Frisbees, swimming suits, sun block, comfortable shoes and festive vibes!</li>
+          </ol>
+
+CAMPERS PASSES
+If you would like to camp at the Festival Camping Sites, then an Admission Pass with an additional TENT or CARAVAN PASS needs to be purchased.
+TENT PASS: One pass per Tent is required.
+
+CARAVAN PASS: One pass per Caravan is required.
+Reminder that Camping Passes to the Festival are LIMITED.
+
+CAMPERS PARKING
+A small parking area just a few minutes’ walk from the Festival site has been reserved for campers. There are not sufficient parking spots for all campers, so please note that it will operate on a first come first serve basis. The parking spot can only be accessed with a valid WEEKEND PASS with the additional WEEKEND CAMPING TENT PASS.
+
+CAMPERS DROP-OFF POINT
+For your convenience, there is an allocated Campers Drop-Off point near the Festival Entrance where you can drop-off your friends and camping gear before proceeding to the parking area. Please do not leave any of your belongings unattended – the Festival is not responsible for any losses, theft or damages.
+
+
+
           </dd>
         </dl>
       </div>
-      <h1 class="page-title">Saturday 13<sup>th</sup></h1>
-      <div class="timetable-stages">
-        <dl class="timetable-stage" v-repeat="timetable.saturday">
-          <dt>{{ $key }}</dt>
-          <dd v-repeat="entry:$value">
-              <span v-repeat="artist:entry.lineup">
-                <a href="#/lineup/{{ artist.$key }}">{{ artist.name }}</a>
-                <span v-if="$index !== entry.lineup.length - 1">&plus;<br></span>
-              </span>
-            &mdash;
-            <span>{{ entry.time }}</span>
-          </dd>
+      <!-- <div class="facilities-entries">
+        <dl class="facilities-entry" v-repeat="facilities">
+          <dt v-html="name"></dt>
+          <dd v-html="text"></dd>
         </dl>
+      </div> -->
+    </section>
+  </section>
+</section>
+
+<section id="location" class="page">
+  <section class="section">
+    <section class="section-inner">
+      <h1 class="page-title">Getting There</h1>
+      <div class="col-left">
+        <h2>Kornos Camping Area, Larnaca, Cyprus</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col-right">
+        <img src="http://placehold.it/500x150">
+      </div>
+      <div class="location-map col-left">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d209417.31958622337!2d33.402445!3d34.902795!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e0a23057b45e61%3A0x43ca040779fc6568!2sTHE+MOTHERSHIP+-+THE+AFRO+BANANA+REPUBLIC+FESTIVAL!5e0!3m2!1sen!2sus!4v1468411039252" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <!-- <a href="https://goo.gl/maps/4djk7" target="_blank"><span>Google Map</span><img src="images/bg_location.jpg"></a> -->
+      </div>
+      <div class="text col-right">
+        <h3>Directions</h3>
+          <p>From <strong>Nicosia</strong> or <strong>Limassol</strong>, on the main highway, take the exit no. 11 for Kornos/Pyrga/Stavrovouni.</p>
+
+          <p>After you take the exit DO NOT turn towards Kornos but follow the sign towards Pyrga until you reach the old Nicosia-Limassol road a few hundred metres from your original exit of the main highway.</p>
+
+          <p>At the old Nicosia-Limassol road junction turn right towards Limassol / Stavrovouni. Follow the road for about 3 kilometres.</p>
+
+          <p>From <strong>Larnaca</strong>, take the exit from the Kalo Chorio roundabout towards Kalo Chorio. Progress through the villages until you find the old Nicosia-Limassol roundabout of Mosfiloti. Turn left and follow the old Ni class="small"cosia-Limassol road towards Limassol for about 4 kilometers.</p>
+
+          <p>And as always...Follow the Bananas!</p>
       </div>
     </section>
   </section>
 </section>
 
+<!--
 <section id="tickets" class="page">
   <section class="section">
     <section class="section-inner">
@@ -273,34 +383,7 @@
     </section>
   </section>
 </section>
-
-<section id="location" class="page">
-  <section class="section">
-    <section class="section-inner">
-      <h1 class="page-title">Location</h1>
-      <div class="text">
-        <div v-html="location.text"></div>
-      </div>
-      <div class="location-map">
-        <a href="https://goo.gl/maps/4djk7" target="_blank"><span>Google Map</span><img src="images/bg_location.jpg"></a>
-      </div>
-    </section>
-  </section>
-</section>
-
-<section id="info" class="page">
-  <section id="facilities" class="section">
-    <section class="section-inner">
-      <h1 class="page-title">Facilities</h1>
-      <div class="facilities-entries">
-        <dl class="facilities-entry" v-repeat="facilities">
-          <dt v-html="name"></dt>
-          <dd v-html="text"></dd>
-        </dl>
-      </div>
-    </section>
-  </section>
-</section>
+-->
 
 <section id="about" class="page">
   <section class="section">
@@ -321,35 +404,36 @@
       </div>
     </section>
   </section>
+</section>
 
+
+<section id="sponsors" class="page">
   <section class="section">
     <section class="section-inner">
-      <h1 class="page-title">Sponsors</h1>
-      <div class="text"></div>
       <div class="sponsors-entries">
-        <div class="sponsors-entry" v-repeat="sponsors">
-          <img v-attr="src:'images/sponsors/{{ $key }}.png'">
-        </div>
+      sponsors go here
       </div>
     </section>
   </section>
-
 </section>
 
-<section id="volunteer" class="page">
+<section id="connect" class="page">
   <section class="section">
     <section class="section-inner">
-      <h1 class="page-title">Get Involved!</h1>
-      <h2 class="page-subtitle">Volunteering</h2>
-      <div class="text">
-        <p>ABR needs you.</p>
-        <p>Open call for volunteers.</p>
-        <p>Interested in experiencing partying, music and working with other people on a communal base for The Afro Banana Republic Festival?</p>
-        <p>If you’re interested, then email us at volunteers@afrobananarepublic.com and let us know when you are available!</p>
-      </div>
-      <h2 class="page-subtitle">Participating</h2>
-      <div class="text">
-        <p>If you are interest in participating in ABR 2015 to create, perform, work or anything else, then drop us a line at info@afrobananarepublic.com</p>
+    <h1 class="page-title">Stay Updated!</h1>
+      <div class="connect-newsletter">
+        <form method="post"
+            target="_blank"
+            action="http://afrobananarepublic.us5.list-manage2.com/subscribe/post?u=f58ce58e822a97a9cbfcef2e2&amp;id=79ef686f01">
+            <p class="input-group">
+                <input type="email" value="" name="EMAIL" placeholder="Your email address" required>
+                <input type="submit" value="Join our Republic!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+            </p>
+            <div class="help-text">
+                We send newsletters <strong>infrequently</strong>, about once per couple of months. <br>
+                We will also keep your e-mail to ourselves and won't share it with anyone, ever.
+            </div>
+        </form>
       </div>
     </section>
   </section>
@@ -843,11 +927,6 @@
         date: new Date('08/19/2016 20:30')
       },
       {
-        lineup: ['sandybrour'],
-        stage: 'Up the Hill',
-        date: new Date('08/20/2016 19:00')
-      },
-      {
         lineup: ['rootscrew'],
         stage: 'ABR Radio',
         date: new Date('08/19/2016 19:00')
@@ -856,6 +935,11 @@
         lineup: ['rootscrew'],
         stage: 'ABR Radio',
         date: new Date('08/20/2016 19:30')
+      },
+      {
+        lineup: ['sandybrour'],
+        stage: 'Up the Hill',
+        date: new Date('08/20/2016 19:00')
       },
       {
         lineup: ['blueloquat'],
@@ -923,9 +1007,6 @@
         date: new Date('08/20/2016 09:00')
       },
     ],
-    location: {
-      text: '<div class="col-left"><p>From <strong>Nicosia</strong> or <strong>Limassol</strong>, on the main highway, take the exit no. 11 for Kornos/Pyrga/Stavrovouni.</p><p>After you take the exit DO NOT turn towards Kornos but follow the sign towards Pyrga until you reach the old Nicosia-Limassol road a few hundred metres from your original exit of the main highway.</p><p>At the old Nicosia-Limassol road junction turn right towards Limassol / Stavrovouni. Follow the road for about 3 kilometres.</p></div><div class="col-right"><p>From <strong>Larnaca</strong>, take the exit from the Kalo Chorio roundabout towards Kalo Chorio. Progress through the villages until you find the old Nicosia-Limassol roundabout of Mosfiloti. Turn left and follow the old Nicosia-Limassol road towards Limassol for about 4 kilometers.</p></div><div class="clear"><p>And as always...Follow the Bananas!</p></div>'
-    },
     facilities: [
       {
         name: 'Camping',
@@ -1058,12 +1139,7 @@
         name: 'Special Thanks',
         text: '<p>&lsquo;V&rsquo;, &lsquo;N&rsquo; &amp; &lsquo;M&rsquo;</p>'
       }
-    ],
-    sponsors: {
-      city: '',
-      geri: '',
-      moec: ''
-    }
+    ]
   }
   abr.$data.slots.toObjectByStage = function(date_start, date_end) {
     var slots = {},
@@ -1150,8 +1226,7 @@
     el: '#about',
     data: {
       about: abr.$data.about,
-      people: abr.$data.people,
-      sponsors: abr.$data.sponsors
+      people: abr.$data.people
     }
   });
   abr.views.lineupEntry = new Vue({
