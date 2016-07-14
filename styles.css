@@ -14,7 +14,8 @@ h3 {
 }
 body {
   /*font-family: 'Cabin', sans-serif;*/
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Roboto', sans-serif;
 
   font-size: 16px;
   line-height: 1.556;
@@ -157,10 +158,10 @@ strong {
   /*color: #1fa1b1;*/
   color: #f3bd2b;
   /*font-weight: 400;*/
-  font-family: 'Finger Paint', cursive;
+  /*font-family: 'Finger Paint', cursive;*/
   /*font-family: 'Flamenco', cursive;*/
   font-weight: 300;
-
+  text-transform: uppercase;
   text-align: center;
   font-size: 5em;
   line-height: 0.8;
@@ -500,18 +501,20 @@ h2.page-subtitle {
 }
 
 #intro {
-  /*background: url("images/site/intro-628x600.png") 0 0 no-repeat;*/
-  /*background: url("images/site/intro-628x600.png") center center no-repeat;*/
   height: 100%;
-  background-image:  url("images/site/banana-hand.png"),
-                linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%);
+  background-image: linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%);
+}
+
+#hero {
+  background-image:
+     url("images/site/shadow.png"),
+    url("images/site/flare.png"),
+    url("images/site/banana-hand.png");
   background-position: left top;
+  background-blend-mode: screen;
   background-repeat: no-repeat;
   background-size: contain;
-}
-#hero {
-  background: url("images/site/lineup.png") right center no-repeat;
-  background-size: 60%, contain;
+  z-index: 0;
 }
 #lineup, .lineup-page {
   display: none;
