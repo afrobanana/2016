@@ -312,10 +312,13 @@ strong {
   line-height: 1.3;
 }
 .timetable-stage a {
-  text-transform: lowercase;
+  /*text-transform: lowercase;*/
 }
-.timetable-stage dd span + span {
+
+.timetable-entry-artist-label,
+.timetable-entry-time {
   font-size: 0.8em;
+  display: inline-block;
 }
 .sponsors-entry {
   display: inline-block;
