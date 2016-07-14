@@ -9,6 +9,9 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
   margin-top: 0;
 }
+h3 {
+  color: #FF5722;
+}
 body {
   /*font-family: 'Cabin', sans-serif;*/
   font-family: 'Open Sans', sans-serif;
@@ -200,7 +203,7 @@ strong {
   vertical-align: top;
   line-height: 1;
 }
-.facilities-entry,
+/*.facilities-entry,*/
 .staff-entry,
 .timetable-stage {
   display: inline-block;
@@ -223,6 +226,32 @@ strong {
   /*color: #f0b61a;*/
   /*background-color: rgba(0, 0, 0, 0.3);*/
 }
+.location-content,
+.experiences-entries,
+.facilities-entry  {
+  column-count: 3;
+}
+.experiences-entry,
+.location-content > div,
+.facilities-entry > div {
+  break-inside: avoid;
+  margin-bottom: 1.5em;
+}
+.facilities-entry-health {
+    background-color: rgba(255, 127, 80, 0.69);
+    padding: 2em;
+    font-size: 0.8em;
+    margin: 2em -1em;
+}
+.facilities-entry {
+  margin-bottom: 2em;
+}
+/*.facilities-entry dd h3 {
+  break-after: avoid;
+}
+.facilities-entry dd h3 + * {
+  break-before: avoid;
+}*/
 .staff-entry dd,
 .facilities-entry dd {
   text-align: left;
@@ -358,10 +387,13 @@ strong {
   content: ")";
 }
 .page-subtitle {
-  font-size: 1.3em;
+  font-size: 1.45em;
   color: #673F46;
   line-height: 1;
   font-weight: normal;
+}
+h2.page-subtitle {
+  text-align: center;
 }
 .lineup-page-links {
   margin: 2em 0 0 0;
@@ -445,20 +477,20 @@ strong {
   display: block;
   width: 100%;
 }
-.col-left {
+/*.col-left {
   float: left;
   clear: left;
 }
 .col-right,
 .col-left {
   text-align: left;
-  /*font-size: 0.85em;*/
+
   width: 47%;
 }
 .col-right {
   float: right;
   clear: right;
-}
+}*/
 .clear {
   float: none;
   clear: both;
