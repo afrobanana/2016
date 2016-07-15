@@ -232,15 +232,21 @@ ol {
   /*background-color: rgba(0, 0, 0, 0.3);*/
 }
 /*.location-content,*/
-.columns,
-.experiences-entries,
-.facilities-entry  {
+.columns {
   column-count: 3;
 }
-.experiences-entry,
-/*.location-content > div,*/
-.column,
-.facilities-entry > div {
+@media all and (max-width: 789px) {
+  .columns {
+    column-count: 2;
+  }
+}
+@media all and (max-width: 499px) {
+  .columns {
+    column-count: 1;
+  }
+}
+
+.columns-item {
   break-inside: avoid;
   margin-bottom: 1.5em;
   background-color: rgba(255, 250, 240, 0.65);
@@ -419,7 +425,11 @@ ol {
   display: none;
 }
 .lineup-page .page-title {
-  text-shadow: 4px 3px 0px #735a58, 6px 5px 0px rgba(198, 226, 209, 0.7);
+  text-shadow: 4px 3px 0px #735a58,
+               6px 5px 0px rgba(198, 226, 209, 0.7);
+  max-width: 10em;
+  margin: 0 auto;
+  line-height: 1;
 }
 .lineup-page .section {
   background-position: center top;
