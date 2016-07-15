@@ -515,8 +515,8 @@ h2.page-subtitle {
   float: left;
 }
 .location-map img {
-  float: left;
-  margin-left: 2em;
+  float: right;
+  /*margin-left: 2em;*/
   max-width: 35%;
 }
 /*.col-left {
