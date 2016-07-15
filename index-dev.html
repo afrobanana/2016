@@ -175,6 +175,7 @@
   </script>
 </head>
 <body>
+<i class="modal-close">&times;</i>
 <nav class="nav-global headroom">
   <ol>
     <li class=""><a class="nav-item" href="#intro">Home</a></li>
@@ -228,7 +229,8 @@
             <dt>{{ $key }}</dt>
             <dd v-repeat="entry:$value">
               <span v-repeat="artist:entry.lineup">
-                <a href="#/lineup/{{ artist.$key }}">{{ artist.name }}</a>
+                <a href="#/lineup/{{ artist.id }}" v-if="artist.text">{{ artist.name }}</a>
+                <span v-if="!artist.text">{{ artist.name }}</span>
                 &nbsp;<em class="timetable-entry-artist-label" v-if="artist.labels">{{ artist.labels[0] }}</em>
               </span>
               <span class="timetable-entry-time">@ {{ entry.time }}</span>
@@ -246,7 +248,8 @@
             <dt>{{ $key }}</dt>
             <dd v-repeat="entry:$value">
               <span v-repeat="artist:entry.lineup">
-                <a href="#/lineup/{{ artist.$key }}">{{ artist.name }}</a>
+                <a href="#/lineup/{{ artist.id }}" v-if="artist.text" v-text="artist.name"></a>
+                <span v-if="!artist.text">{{ artist.name }}</span>
                 &nbsp;<em class="timetable-entry-artist-label" v-if="artist.labels">{{ artist.labels[0] }}</em>
               </span>
               <span class="timetable-entry-time">@ {{ entry.time }}</span>
@@ -254,7 +257,6 @@
           </dl>
         </div>
       </div>
-
     </section>
   </section>
 </section>
@@ -470,7 +472,7 @@
         </div>
       </div>
       <div class="location-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d209417.31958622337!2d33.402445!3d34.902795!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e0a23057b45e61%3A0x43ca040779fc6568!2sTHE+MOTHERSHIP+-+THE+AFRO+BANANA+REPUBLIC+FESTIVAL!5e0!3m2!1sen!2sus!4v1468411039252" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d209417.31958622337!2d33.402445!3d34.902795!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e0a23057b45e61%3A0x43ca040779fc6568!2sTHE+MOTHERSHIP+-+THE+AFRO+BANANA+REPUBLIC+FESTIVAL!5e0!3m2!1sen!2sus!4v1468411039252" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
         <img src="http://placehold.it/300x450">
         <!-- <a href="https://goo.gl/maps/4djk7" target="_blank"><span>Google Map</span><img src="images/bg_location.jpg"></a> -->
       </div>
@@ -578,24 +580,24 @@
   </section>
 </section>
 
+
 <section id="lineup__{{ $key }}" class="page lineup-page" v-repeat="lineUpEntries">
-  <section class="section" v-attr="style: 'background:url(images/lineup/{{ $key }}/{{ $key }}-large.jpg) fixed no-repeat center 2.4em;background-size:cover'">
+  <section class="section" v-attr="style: 'background-image:url(/images/lineup/{{ $key }}.png);'">
     <section class="section-inner">
-      <h1 class="page-title" v-html="name"></h1>
+      <h1 class="page-title">
+        {{ name }}
+        <sup class="lineup-entry-tag" v-if="tag">({{ tag }})</sup>
+      </h1>
       <h2 class="page-subtitle lineup-page-labels">
         <span class="lineup-entry-label" v-repeat="label:labels" v-html="label"></span>
       </h2>
       <div class="text">
+        <div class="lineup-page-links">
+          <a href="{{$value}}" v-class="$key" v-repeat="links" v-text="$key" target="_blank"></a>
+        </div>
         <div v-html="text"></div>
       </div>
-      <div class="lineup-page-links">
-        <a href="{{$value}}" v-repeat="links" v-text="$key" target="_blank"></a>
-      </div>
-    </section>
-  </section>
-  <section class="section">
-    <section class="section-inner">
-      <lineup-entries></lineup-entries>
+      <div style="margin: 0 auto; width: 85%;" v-repeat="item:embed" class="embed"></div>
     </section>
   </section>
 </section>
@@ -626,7 +628,10 @@
         ],
         links: {
           YouTube: 'http://bit.ly/JULIUS_HELIOCENTRICS'
-        }
+        },
+        embed: [
+          '<iframe width="560" height="460" src="https://www.youtube.com/embed/xbXxyo3YKD0" frameborder="0" allowfullscreen></iframe>'
+        ]
       },
 
       funktionen: {
@@ -637,8 +642,11 @@
           'Dj SET', 'Techno', 'House', 'Wave', 'Italo'
         ],
         links: {
-          YouTube: 'http://bit.ly/DELTAFUNKTIONEN'
-        }
+          SoundCloud: 'http://bit.ly/DELTAFUNKTIONEN'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/46108705&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       batida: {
@@ -650,7 +658,10 @@
         ],
         links: {
           YouTube: 'http://bit.ly/BATIDA'
-        }
+        },
+        embed: [
+          '<iframe width="560" height="460" src="https://www.youtube.com/embed/xeXO-GfoQ_0" frameborder="0" allowfullscreen></iframe>'
+        ]
       },
 
       family_atlantica: {
@@ -662,7 +673,10 @@
         ],
         links: {
           YouTube: 'http://bit.ly/FAMILYATLANTICA'
-        }
+        },
+        embed: [
+          '<iframe width="560" height="460" src="https://www.youtube.com/embed/2NjikZodGHU" frameborder="0" allowfullscreen></iframe>'
+        ]
       },
 
       cassegrain: {
@@ -673,8 +687,11 @@
           'Dj Set', 'Techno'
         ],
         links: {
-          YouTube: 'http://bit.ly/CASSEGRAIN'
-        }
+          SoundCloud: 'http://bit.ly/CASSEGRAIN'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/897105&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
 
@@ -686,8 +703,11 @@
           'Live', 'Gnawa', 'Electronic/experimental dance music', 'West African Funk','Desert Blues', 'Psych Rock'
         ],
         links: {
-          YouTube: 'http://bit.ly/ELECTRICJALABA'
-        }
+          SoundCloud: 'http://bit.ly/ELECTRICJALABA'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/19878570&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       cutnbass: {
@@ -698,8 +718,11 @@
           'Live', 'Electro', 'AfroBeat', 'Neu-Funk', 'Big beat'
         ],
         links: {
-          YouTube: 'http://bit.ly/CUTNBASS'
-        }
+          SoundCloud: 'http://bit.ly/CUTNBASS'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/57587592&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       soundspecies: {
@@ -710,8 +733,11 @@
           'Dj Set', 'Eclectic', 'Rhythmic', 'Electronic Dance'
         ],
         links: {
-          YouTube: 'http://bit.ly/SOUNDSPECIES'
-        }
+          SoundCloud: 'http://bit.ly/SOUNDSPECIES'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/4604619&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
 
@@ -723,8 +749,11 @@
           'Dj Set', 'House', 'Acid', 'Ambient', 'Soundtracks'
         ],
         links: {
-          YouTube: 'http://bit.ly/MASPAVENTI'
-        }
+          SoundCloud: 'http://bit.ly/MASPAVENTI'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/202715&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
 
@@ -736,8 +765,11 @@
           'Dj Set', 'Dub Techno', 'Techno', 'EBM', 'House'
         ],
         links: {
-          YouTube: 'http://bit.ly/ALEXIS_'
-        }
+          SoundCloud: 'http://bit.ly/ALEXIS_'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/144964512&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
 
@@ -750,7 +782,10 @@
         ],
         links: {
           YouTube: 'http://bit.ly/AFROMPANTABANANA'
-        }
+        },
+        embed: [
+          '<iframe width="560" height="460" src="https://www.youtube.com/embed/Z1b3RQ6U_fU" frameborder="0" allowfullscreen></iframe>'
+        ]
       },
 
 
@@ -775,8 +810,11 @@
           'Live', 'Organic Techno', 'World Minimal Intelligent Dance Music'
         ],
         links: {
-          YouTube: 'http://bit.ly/ROSCIUS'
-        }
+          SoundCloud: 'http://bit.ly/ROSCIUS'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/1259833&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       funkastic: {
@@ -787,8 +825,11 @@
           'Live', 'Funk', 'Funk Jazz'
         ],
         links: {
-          YouTube: 'http://bit.ly/FUNKASTIC11'
-        }
+          SoundCloud: 'http://bit.ly/FUNKASTIC11'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/268040605&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       sandybrour: {
@@ -799,8 +840,11 @@
           'Live', 'Latin', 'Jazz', 'Blues', 'Tango', 'Bossa Nova', 'Swing', 'Bolero', 'Waltz'
         ],
         links: {
-          YouTube: 'http://bit.ly/SANDYBROUR'
-        }
+          SoundCloud: 'http://bit.ly/SANDYBROUR'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/268040605&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       rootscrew: {
@@ -811,8 +855,11 @@
           'Dj Set', 'Roots Reggae', 'Dub'
         ],
         links: {
-          YouTube: 'http://bit.ly/ROOTSCREW'
-        }
+          SoundCloud: 'http://bit.ly/ROOTSCREW'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/12042897&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       blueloquat: {
@@ -824,7 +871,10 @@
         ],
         links: {
           YouTube: 'http://bit.ly/BLUELOQUAT'
-        }
+        },
+        embed: [
+          '<iframe width="560" height="460" src="https://www.youtube.com/embed/m8pTLsVJS_w" frameborder="0" allowfullscreen></iframe>'
+        ]
       },
 
 
@@ -837,7 +887,10 @@
         ],
         links: {
           YouTube: 'http://bit.ly/PROTESYLES'
-        }
+        },
+        embed: [
+          '<iframe width="560" height="460" src="https://www.youtube.com/embed/zv5vd3CALbc" frameborder="0" allowfullscreen></iframe>'
+        ]
       },
 
       cusack: {
@@ -848,8 +901,11 @@
           'Dj Set', 'House', 'Techno'
         ],
         links: {
-          YouTube: 'http://bit.ly/CUSACK_'
-        }
+          SoundCloud: 'http://bit.ly/CUSACK_'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/526694&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       danceparty: {
@@ -885,7 +941,10 @@
         ],
         links: {
           YouTube: 'http://bit.ly/DJIOA'
-        }
+        },
+        embed: [
+          '<iframe width="560" height="460" src="https://www.youtube.com/embed/7smyF7xs45o" frameborder="0" allowfullscreen></iframe>'
+        ]
       },
 
 
@@ -897,8 +956,11 @@
           'Dj Set' ,'Soul', 'Funk', 'Jazz', 'Disco', 'Deep-House', 'Techno', 'Bass', 'Tropical'
         ],
         links: {
-          YouTube: 'http://bit.ly/BOMBASOUL'
-        }
+          MixCloud: 'http://bit.ly/BOMBASOUL'
+        },
+        embed: [
+          '<iframe width="100%" height="460" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2FBombasoul%2F&light=1" frameborder="0"></iframe>'
+        ]
       },
 
       charis: {
@@ -909,8 +971,11 @@
           'Funk', 'Soul', 'Jazz', 'World'
         ],
         links: {
-          YouTube: 'http://bit.ly/DjCHARIS'
-        }
+          MixCloud: 'http://bit.ly/DJCHARIS'
+        },
+        embed: [
+          '<iframe width="100%" height="460" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fcyio%2F&light=1" frameborder="0"></iframe>'
+        ]
       },
 
 
@@ -922,8 +987,11 @@
           'Downtempo', 'Electronica', 'New Disco'
         ],
         links: {
-          YouTube: 'http://bit.ly/PUEBLOFRANCO'
-        }
+          MixCloud: 'http://bit.ly/PUEBLOFRANCO'
+        },
+        embed: [
+          '<iframe width="100%" height="460" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Firaklisfrangos%2F" frameborder="0"></iframe>'
+        ]
       },
 
       kineza: {
@@ -934,8 +1002,11 @@
           'Dj Set', 'Acid Breaks', 'Boogie Booty Bounce', 'Tribal Beats'
         ],
         links: {
-          YouTube: 'http://bit.ly/KINEZA_'
-        }
+          SoundCloud: 'http://bit.ly/KINEZA_'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/11254655&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       patraulea: {
@@ -946,8 +1017,11 @@
           'Dj Set', 'Deep Groove'
         ],
         links: {
-          YouTube: 'http://bit.ly/PATRAULEA'
-        }
+          SoundCloud: 'http://bit.ly/PATRAULEA'
+        },
+        embed: [
+          '<iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/8300545&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+        ]
       },
 
       sisamos: {
@@ -958,7 +1032,7 @@
           'Dj Set', 'Meditative'
         ],
         links: {
-          YouTube: ''
+
         }
       },
 
@@ -986,17 +1060,17 @@
         text: ''
       },
 
-      name: {
-        name: '',
-        tag: '',
-        text: '',
-        labels: [
+      // name: {
+      //   name: '',
+      //   tag: '',
+      //   text: '',
+      //   labels: [
 
-        ],
-        links: {
-          YouTube: ''
-        }
-      },
+      //   ],
+      //   links: {
+      //     YouTube: ''
+      //   }
+      // },
 
 
       toArrayOfNames: function() {
@@ -1309,25 +1383,29 @@
 
     return slots;
   };
+
+  Object.keys(abr.$data.lineup).forEach(function(id) {
+    abr.$data.lineup[id].id = id;
+  });
 </script>
 
-<!-- Initialize -->
+<!-- Views -->
 <script type="text/javascript">
   Vue.component('lineup-entries', {
     template: $('#lineup-entries-template').html()
   });
-  abr.viewData = {
-    lineup: {
-      lineUpEntries: abr.$data.lineup
-    }
-  }
+  // abr.viewData = {
+  //   lineup: {
+  //     lineUpEntries: abr.$data.lineup
+  //   }
+  // }
   abr.views = {};
-  abr.views.lineup = new Vue({
-    el: '#lineup',
-    data: {
-      lineUpEntries: abr.$data.lineup
-    }
-  })
+  // abr.views.lineup = new Vue({
+  //   el: '#lineup',
+  //   data: {
+  //     lineUpEntries: abr.$data.lineup
+  //   }
+  // })
   abr.views.timetable = new Vue({
     el: '#timetable',
     data: {
@@ -1357,12 +1435,14 @@
       people: abr.$data.people
     }
   });
+
   abr.views.lineupEntry = new Vue({
     el: 'body',
     data: {
       lineUpEntries: abr.$data.lineup
     }
   });
+
   abr.nav_global = $('.nav-global');
   abr.nav_mobile = $('.nav-mobile');
   abr.nav_items = abr.nav_global.find('li');
@@ -1377,6 +1457,62 @@
     abr.nav_global.is('.expand') &&
       abr.nav_global.removeClass('expand');
   });
+</script>
+
+<!-- Initialize -->
+<script type="text/javascript">
+  var modal = {
+    getEl: function(id) {
+      return $('#' + (id || this.id));
+    },
+    getItem: function() {
+      var item = this.path.reduce(function(sum, current) {
+        return (sum || abr.$data)[current];
+      }, null);
+      console.warn('getItem', this.id, item);
+      return item;
+    },
+    hide: function() {
+      console.log('modal hide', this.id);
+      this.hidden = true;
+      this.visible = !this.hidden;
+      $('body').addClass('modal-hidden').removeClass('modal-visible');
+      $('.embed', this.getEl()).html('');
+    },
+    show: function() {
+      console.log('modal show', this.id);
+      this.hidden = false;
+      this.visible = !this.hidden;
+      $('body').addClass('modal-visible').removeClass('modal-hidden');
+    },
+    set: function(id, path) {
+      console.log('modal set', id);
+      this.unset();
+      this.id = id;
+      this.path = path;
+      this.getEl().addClass('is-modal');
+    },
+    unset: function() {
+      if (this.id) {
+        console.log('modal unset', this.id);
+        this.hide();
+        this.getEl().removeClass('is-modal');
+        this.id = null;
+      }
+    }
+  };
+
+  $('body').on('click', '.modal-close', function(e) {
+    var prevPage = window.location.toString();
+    window.history.go(-1);
+    setTimeout(function(){
+      if (window.location.toString() === prevPage) {
+          window.location = '#';
+      }
+    }, 200);
+    return false;
+  });
+
   $(window).on('resize', function(e) {
       var nav_width = (function(items) {
           var w = 0;
@@ -1393,35 +1529,53 @@
       } else {
         abr.nav_global.removeClass('minimize');
       }
-    }).on('hashchange', function() {
-      return
-      var hash = (location.hash || '#/intro').split('#/')[1],
-          subs = hash.split('/'),
-          id = hash.replace(/\//g,  '__'),
-          $el = $('#' + id);
+  }).on('hashchange', function() {
+    var hash = (location.hash || '#/').split('#/')[1] || '',
+        id = hash.replace(/\//g,  '__'),
+        path = hash.split('/'),
+        $el = $('#' + id);
 
-      // $('.page.is-active, a.is-active').removeClass('is-active');
-      // subs.forEach(function(sub) {
-      //   $('a[href="#/' + sub + '"]').addClass('is-active');
+    console.warn('location', id, $el.length, hash);
+
+    if ($el.length) {
+      modal.set(id, path);
+      requestAnimationFrame(function() {
+        modal.show();
+        var item = modal.getItem();
+        if (item && item.embed && path[0] === 'lineup' ) {
+          $('.embed', modal.getEl()).each(function(i) {
+            $(this).html( item.embed[i] );
+          });
+        }
+      });
+    }
+    else {
+      modal.unset();
+    }
+
+    // $('.page.is-active, a.is-active').removeClass('is-active');
+    // subs.forEach(function(sub) {
+    //   $('a[href="#/' + sub + '"]').addClass('is-active');
+    // });
+    // $('a[href="#/' + hash + '"]').addClass('is-active');
+    if (!abr.views.id) {
+      // abr.views[id] = new Vue({
+      //   el: '#' + id,
+      //   data: abr.viewData[id]
       // });
-      // $('a[href="#/' + hash + '"]').addClass('is-active');
-      if (!abr.views.id) {
-        // abr.views[id] = new Vue({
-        //   el: '#' + id,
-        //   data: abr.viewData[id]
-        // });
-      }
-      // if (abr._headroom) {
-      //   abr._headroom.destroy();
-      // }
-      // abr._headroom = new Headroom($(".nav-global")[0], {
-      //   scroller: $el[0]
-      // });
-      // abr._headroom.init();
-      // $el.addClass('is-active').scrollTop(0);
-    }).trigger('resize').trigger('hashchange');
-      abr._headroom = new Headroom($(".nav-global")[0]);
-      abr._headroom.init();
+    }
+    // if (abr._headroom) {
+    //   abr._headroom.destroy();
+    // }
+    // abr._headroom = new Headroom($(".nav-global")[0], {
+    //   scroller: $el[0]
+    // });
+    // abr._headroom.init();
+    // $el.addClass('is-active').scrollTop(0);
+  }).trigger('hashchange').trigger('resize');
+
+  abr._headroom = new Headroom($(".nav-global")[0]);
+  abr._headroom.init();
 </script>
 </body>
 </html>
