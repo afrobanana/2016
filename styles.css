@@ -246,11 +246,6 @@ input {
   vertical-align: top;
   display: inline-block;
 }
-.lineup-page .text {
-  background-color: rgba(255, 250, 240, 0.65);
-  box-sizing: border-box;
-  padding: 2em;
-}
 .facilities-entry {
   margin-bottom: 2em;
 }
@@ -420,21 +415,31 @@ input {
 .lineup-page {
   display: none;
 }
-.lineup-page .page-title {
+.lineup-page .page-title,
+.experience-page .page-title {
   text-shadow: 4px 3px 0px #735a58,
                6px 5px 0px rgba(198, 226, 209, 0.7);
   max-width: 10em;
   margin: 0 auto;
   line-height: 1;
+  font-size: 4em;
 }
+.experience-page,
 .lineup-page  {
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-blend-mode: overlay;
-  background-color: rgba(255, 255, 255, 0.8);
+  /*background-color: rgba(255, 255, 255, 0.6);*/
 }
+.experience-page .text,
+.lineup-page .text {
+  background-color: rgba(255, 250, 240, 0.65);
+  box-sizing: border-box;
+  padding: 2em;
+}
+.experience-page .embed iframe,
 .lineup-page .embed iframe {
   width: 100%;
 }
@@ -451,7 +456,7 @@ input {
 }*/
 .page-subtitle {
   font-size: 1.45em;
-  color: #673F46;
+  color: rgba(251, 251, 251, 0.75);
   line-height: 1;
   font-weight: normal;
 }
@@ -475,6 +480,7 @@ h2.page-subtitle {
 #volunteer .text,
 /*#location .text,*/
 #about .text,
+.experience-page .text,
 .lineup-page .text {
   max-width: 32em;
   margin: 2em auto;
@@ -662,7 +668,7 @@ h2.page-subtitle {
 .modal-visible .is-modal--active {
   display: block;
   opacity: 1;
-  background: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,0.6);
 }
 .modal-visible .modal-close {
   display: block;

@@ -163,68 +163,12 @@
     <h2 class="page-subtitle">Otherworldly Experiences in the Parallel Universe of the ABR Festival</h2>
     <section class="section experiences">
       <section class="section-inner experiences-entries columns">
-        <div class="experiences-entry columns-item">
-          <h3>The bizarre, the wonderful and the unabashedly hilarious with ABR Radio</h3>
+        <div class="experiences-entry columns-item" v-repeat="experienceEntries">
+          <h3><a href="#experience/{{ id }}">{{ name }}</a></h3>
           <div class="experiences-entry-image">
-            <img src="/images/experiences/abr_radio.png">
+            <a href="#experience/{{ id }}"><img src="/images/experiences/{{ id }}.png"></a>
           </div>
-          <div class="experiences-entry-text">
-            <p>Let’s get things straight: there’s no pause button here so don’t even try to look for one! That’s right, ABR Radio will be causing a spectacular stir from the early hours of the morning until midnight.</p>
-
-            <p> At the heart of the festival housed within the SSPM young designers pavilion, the welcoming and altogether quirky area will provide a cool refuge from the day time heat. And with ABR Radio now in its third year, it’s set to be the best experience to date.</p>
-
-            <p>Head here for adrenaline fuelled moments with hilariously unpredictable interactive radio shows by the ABR hosts, soul soothing sessions, upbeat world music journeys, Venezuelan dance workshops in the mix. That’s not to forget interviews with your favourite international guest musicians and much more!</p>
-          </div>
-        </div>
-        <div class="experiences-entry columns-item">
-          <h3>Talented young designers in the limelight with the SSPM pavilion</h3>
-          <div class="experiences-entry-image">
-            <img src="/images/experiences/sspm.png">
-          </div>
-          <div class="experiences-entry-text">
-            <p>There’s something extra special about this year’s ABR festival and it will no doubt make you stop in your tracks the moment you spot it. The first of its kind SSPM pavilion shouts out to all festival goers in all its splendour, encouraging everyone to use the space to eat, unwind, have good chat, and listen to the sounds of great music and other fun happenings with the ABR Radio on hand.</p>
-            <p>With the special pavilion standing as the outcome of a young designers’ competition which saw ABR team up with Bank of Cyprus and Scaffolding Solutions, dozens of creative talents submitted inspiring proposals for a pavilion unlike the rest to push the boundaries of innovation within public spaces and immersive environments. With five finalists, the top team have now been given the chance to realise their vision; all you have to do is kick back, relax and enjoy!</p>
-            <p>The SSPM pavilion will be exhibited at a later stage at a central outdoor location in Nicosia.</p>
-          </div>
-        </div>
-        <div class="experiences-entry columns-item">
-          <h3>Inspirational artistic interventions via ABR IN LAB</h3>
-          <div class="experiences-entry-image">
-            <img src="/images/experiences/abr_inlab.png">
-          </div>
-          <div class="experiences-entry-text">
-            <p>The ABR community is all about shaking up norms, where all things ‘different’ really are the name of the game! And now, the creative team is giving you good reason to experience art in a whole new way.</p>
-          </div>
-        </div>
-        <div class="experiences-entry columns-item">
-          <h3>Paravan theatrics steeped in otherworldly mystery</h3>
-          <div class="experiences-entry-image">
-            <img src="/images/experiences/paravan.png">
-          </div>
-          <div class="experiences-entry-text">
-            <p>No ABR festival could possibly be complete without a whole load of magic and theatrics to fill the event with heaps of mystery and intrigue in a parallel universe so thrillingly exciting. And yes, PARAVAN Proactions will be descending on the festival grounds once again this year with new tricks up their sleeve as they prepare to ignite your imagination with surreal improvisations and performance interventions.</p>
-            <p>So go on, join them as they take you somewhere you’ve never been before when you least expect it, with interventions in the magical forest land unlike anything you’ve ever experienced. Impactful, contagious and in typical PARAVAN fashion, we won’t give away too much...just be prepared for a discovery. </p>
-            <p>Expect them anywhere, but who knows where!</p>
-          </div>
-        </div>
-        <div class="experiences-entry columns-item">
-          <h3>A whole new sound experience with Louvana Records</h3>
-          <div class="experiences-entry-image">
-            <a href="#experience/louvana"><img src="/images/experiences/louvana.png"></a>
-          </div>
-          <div class="experiences-entry-text">
-            <p>Prick up your ears- you’ll want to be ready for this! Following on from last year’s success, the ABR is proudly collaborating with Louvana Records, giving you the unique opportunity to experience the process of live recording as you immerse yourselves in a world of unusual combinations, original sounds and the most unpredictable beats!</p>
-          </div>
-        </div>
-        <div class="experiences-entry columns-item">
-          <h3>Artistic explorations, mind alterations: Getting creative with Simone Philippou</h3>
-          <div class="experiences-entry-image">
-            <img src="/images/experiences/intoto.png">
-          </div>
-          <div class="experiences-entry-text">
-            <p>It’s all about daring to embrace a new experience through unusual artistic explorations as Simone Philippou takes you on a creative journey you’re not likely to forget!</p>
-            <p>Known for her brilliant illustration work at the INTOTO studio in the heart of Nicosia, where she spends much time working alongside sister Ioanna Philippou, she’ll now be getting creative juices flowing on the festival grounds as she brings influences from a recent trip to Japan into an interactive experience with all those who dare to push the limits of their imagination and embrace something new.</p>
-          </div>
+          <div class="experiences-entry-text" v-html="text"></div>
         </div>
       </section>
     </section>
@@ -475,7 +419,7 @@
   </section>
 
 
-  <section id="experience__{{ $key }}" class="page experience-page is-modal" v-repeat="experienceEntries" v-attr="style: 'background-image:url(/images/experience/{{ $key }}.png);'">
+  <section id="experience__{{ $key }}" class="page experience-page is-modal" v-repeat="experienceEntries" v-attr="style: 'background-image:url(/images/experiences/{{ $key }}.png);'">
     <section class="section" >
       <section class="section-inner">
         <h1 class="page-title">
@@ -1252,14 +1196,27 @@
       ]
     };
     abr.$data.experience = {
-      intoto: {
-        name: 'Artistic explorations, mind alterations: Getting creative with Simone Philippou',
-        text: '<p>It’s all about daring to embrace a new experience through unusual artistic explorations as Simone Philippou takes you on a creative journey you’re not likely to forget!</p><p>Known for her brilliant illustration work at the INTOTO studio in the heart of Nicosia, where she spends much time working alongside sister Ioanna Philippou, she’ll now be getting creative juices flowing on the festival grounds as she brings influences from a recent trip to Japan into an interactive experience with all those who dare to push the limits of their imagination and embrace something new.</p>',
+      abr_radio: {
+        name: 'The bizarre, the wonderful and the unabashedly hilarious with ABR Radio',
+        text: '<p>Let’s get things straight: there’s no pause button here so don’t even try to look for one! That’s right, ABR Radio will be causing a spectacular stir from the early hours of the morning until midnight.</p><p> At the heart of the festival housed within the SSPM young designers pavilion, the welcoming and altogether quirky area will provide a cool refuge from the day time heat. And with ABR Radio now in its third year, it’s set to be the best experience to date.</p><p>Head here for adrenaline fuelled moments with hilariously unpredictable interactive radio shows by the ABR hosts, soul soothing sessions, upbeat world music journeys, Venezuelan dance workshops in the mix. That’s not to forget interviews with your favourite international guest musicians and much more!</p>',
         embed: [
 
         ]
       },
+      abr_inlab: {
+        name: 'Inspirational artistic interventions via ABR IN LAB',
+        text: '<p>The ABR community is all about shaking up norms, where all things ‘different’ really are the name of the game! And now, the creative team is giving you good reason to experience art in a whole new way.</p>',
+        embed: [
 
+        ]
+      },
+      sspm: {
+        name: 'Talented young designers in the limelight with the SSPM pavilion',
+        text: '<p>There’s something extra special about this year’s ABR festival and it will no doubt make you stop in your tracks the moment you spot it. The first of its kind SSPM pavilion shouts out to all festival goers in all its splendour, encouraging everyone to use the space to eat, unwind, have good chat, and listen to the sounds of great music and other fun happenings with the ABR Radio on hand.</p><p>With the special pavilion standing as the outcome of a young designers’ competition which saw ABR team up with Bank of Cyprus and Scaffolding Solutions, dozens of creative talents submitted inspiring proposals for a pavilion unlike the rest to push the boundaries of innovation within public spaces and immersive environments. With five finalists, the top team have now been given the chance to realise their vision; all you have to do is kick back, relax and enjoy!</p><p>The SSPM pavilion will be exhibited at a later stage at a central outdoor location in Nicosia.</p>',
+        embed: [
+
+        ]
+      },
       louvana: {
         name: 'A whole new sound experience with Louvana Records',
         text: '<p>Prick up your ears- you’ll want to be ready for this! Following on from last year’s success, the ABR is proudly collaborating with Louvana Records, giving you the unique opportunity to experience the process of live recording as you immerse yourselves in a world of unusual combinations, original sounds and the most unpredictable beats!</p><p>With all the action to take place in a guerrilla studio, exceptionally talented members of local and visiting bands - all with different backgrounds and experiences – will come together to record a one off live performance.</p>',
@@ -1267,15 +1224,20 @@
             '<iframe width="560" height="460" src="https://www.youtube.com/embed/Z1b3RQ6U_fU" frameborder="0" allowfullscreen></iframe>'
         ]
       },
+      paravan: {
+        name: 'Paravan theatrics steeped in otherworldly mystery',
+        text: '<p>No ABR festival could possibly be complete without a whole load of magic and theatrics to fill the event with heaps of mystery and intrigue in a parallel universe so thrillingly exciting. And yes, PARAVAN Proactions will be descending on the festival grounds once again this year with new tricks up their sleeve as they prepare to ignite your imagination with surreal improvisations and performance interventions.</p><p>So go on, join them as they take you somewhere you’ve never been before when you least expect it, with interventions in the magical forest land unlike anything you’ve ever experienced. Impactful, contagious and in typical PARAVAN fashion, we won’t give away too much...just be prepared for a discovery.</p><p>Expect them anywhere, but who knows where!</p>',
+        embed: [
 
-      name: {
-        name: '',
-        text: '',
+        ]
+      },
+      intoto: {
+        name: 'Artistic explorations, mind alterations: Getting creative with Simone Philippou',
+        text: '<p>It’s all about daring to embrace a new experience through unusual artistic explorations as Simone Philippou takes you on a creative journey you’re not likely to forget!</p><p>Known for her brilliant illustration work at the INTOTO studio in the heart of Nicosia, where she spends much time working alongside sister Ioanna Philippou, she’ll now be getting creative juices flowing on the festival grounds as she brings influences from a recent trip to Japan into an interactive experience with all those who dare to push the limits of their imagination and embrace something new.</p>',
         embed: [
 
         ]
       }
-
     };
     abr.$data.slots.toObjectByStage = function(date_start, date_end) {
       var slots = {},
@@ -1318,6 +1280,9 @@
       return slots;
     };
 
+    Object.keys(abr.$data.experience).forEach(function(id) {
+      abr.$data.experience[id].id = id;
+    });
     Object.keys(abr.$data.lineup).forEach(function(id) {
       abr.$data.lineup[id].id = id;
     });
