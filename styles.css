@@ -170,29 +170,16 @@ input {
   padding: 0.5em 0;
 }
 .page-title {
-  /*color: #C6E2D1;*/
-  /*color: #c1b9a4;*/
-  /*color: #e84347;*/
-  /*color: #1fa1b1;*/
   color: #f3bd2b;
   text-shadow: 0 0 7px rgba(0, 0, 0, 0.22);
-  /*font-weight: 400;*/
-  /*font-family: 'Finger Paint', cursive;*/
-  /*font-family: 'Flamenco', cursive;*/
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
   font-size: 5em;
-  line-height: 0.8;
   max-width: 100%;
   padding: 0;
   margin: 0;
-  line-height: 1.56;
-  /*padding-top: 0.5em;*/
-  /*margin-bottom: 0.5em;*/
-  /*text-shadow: 0 0 10px rgba(0,0,0,0.2);*/
-  /*text-transform: uppercase;*/
-  /*text-shadow: 4px 3px 0px #735a58, 6px 5px 0px rgba(198, 226, 209, 0.7);*/
+  line-height: 1.2;
 }
 .page-subtitle {
 
@@ -672,7 +659,7 @@ h2.page-subtitle {
 .modal-visible {
   overflow: hidden;
 }
-.modal-visible .is-modal {
+.modal-visible .is-modal--active {
   display: block;
   opacity: 1;
   background: rgba(255,255,255,0.9);

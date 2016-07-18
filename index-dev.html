@@ -75,6 +75,7 @@
 </head>
 <body>
   <i class="modal-close">&times;</i>
+
   <nav class="nav-global headroom">
     <ol>
       <li class=""><a class="nav-item" href="#intro">Home</a></li>
@@ -85,8 +86,6 @@
       <li><a class="nav-item" href="#location">Getting There</a></li>
       <li><a class="nav-item" href="http://abr.ticket.com.cy/event/page/1" target="_blank">Tickets <em>Online!</em></a></li>
       <li><a class="nav-item" href="#about">About</a></li>
-      <!-- <li><a class="nav-item" href="#/sponsors">Sponsors</a></li> -->
-      <!-- <li><a class="nav-item" href="#/volunteer">Get Involved!</a></li> -->
       <li><a class="nav-item" href="https://www.facebook.com/TheAfroBananaRepublic" target="_blank"><svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 100 100" overflow="visible" xml:space="preserve"><path fill="#C6E2D1" d="M50,0C22.386,0,0,22.386,0,50s22.386,50,50,50s50-22.386,50-50S77.614,0,50,0z M61.824,49.5h-7.592V77 H42.855V49.5h-5.688v-9.48h5.688v-5.688C42.855,26.6,46.066,22,55.184,22h7.594v9.479h-4.744c-3.551,0-3.787,1.325-3.787,3.797 l-0.014,4.743h8.6L61.824,49.5z"/></svg></a></li>
       <li><a class="nav-item" href="https://twitter.com/afrobananarpb" target="_blank"><svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 100 100" xml:space="preserve"><path fill="#C6E2D1" d="M50,0C22.386,0,0,22.386,0,50s22.386,50,50,50s50-22.386,50-50S77.614,0,50,0z M76.666,38.556 c0.023,0.547,0.037,1.096,0.037,1.646c0,16.818-12.801,36.211-36.211,36.211c-7.188,0-13.877-2.106-19.51-5.717 c0.996,0.116,2.01,0.177,3.037,0.177c5.963,0,11.449-2.034,15.807-5.448c-5.57-0.102-10.271-3.782-11.891-8.838 c0.777,0.148,1.574,0.229,2.395,0.229c1.162,0,2.285-0.156,3.354-0.447C27.862,55.2,23.475,50.056,23.475,43.89 c0-0.053,0-0.106,0-0.16c1.717,0.954,3.68,1.526,5.766,1.593c-3.416-2.282-5.662-6.178-5.662-10.594c0-2.332,0.627-4.52,1.723-6.398 c6.277,7.699,15.656,12.768,26.234,13.299c-0.219-0.933-0.332-1.904-0.332-2.901C51.203,31.698,56.904,26,63.932,26 c3.66,0,6.969,1.545,9.289,4.02c2.9-0.571,5.623-1.63,8.082-3.089c-0.949,2.972-2.969,5.467-5.596,7.041 c2.574-0.308,5.027-0.992,7.309-2.004C81.311,34.52,79.152,36.762,76.666,38.556z"/></svg></a></li>
       <li class="nav-mobile"><a class="nav-item gradient-icon"></a></li>
@@ -126,7 +125,7 @@
               <dt>{{ $key }}</dt>
               <dd v-repeat="entry:$value">
                 <span v-repeat="artist:entry.lineup">
-                  <a href="#/lineup/{{ artist.id }}" v-if="artist.text">{{ artist.name }}</a>
+                  <a href="#lineup/{{ artist.id }}" v-if="artist.text">{{ artist.name }}</a>
                   <span v-if="!artist.text">{{ artist.name }}</span>
                   &nbsp;<em class="timetable-entry-artist-label" v-if="artist.labels">{{ artist.labels[0] }}</em>
                 </span>
@@ -145,7 +144,7 @@
               <dt>{{ $key }}</dt>
               <dd v-repeat="entry:$value">
                 <span v-repeat="artist:entry.lineup">
-                  <a href="#/lineup/{{ artist.id }}" v-if="artist.text" v-text="artist.name"></a>
+                  <a href="#lineup/{{ artist.id }}" v-if="artist.text" v-text="artist.name"></a>
                   <span v-if="!artist.text">{{ artist.name }}</span>
                   &nbsp;<em class="timetable-entry-artist-label" v-if="artist.labels">{{ artist.labels[0] }}</em>
                 </span>
@@ -195,8 +194,6 @@
           </div>
           <div class="experiences-entry-text">
             <p>The ABR community is all about shaking up norms, where all things ‘different’ really are the name of the game! And now, the creative team is giving you good reason to experience art in a whole new way.</p>
-            <p>Drawing on a one-month residency named ABR IN LAB, in collaboration with the Bank of Cyprus, the occasion saw foreign artists jet in from abroad to exchange ideas with a whole range of local professionals, culminating in the ‘Cuprum’ exhibition. Previously showcased at the Bank of Cyprus Cultural Foundation, the artworks/installations are now moving to the festival grounds, shifting from the more confined gallery space to the immersive environment of the festival, with four weeks of experimentation set to come to life in a whole different fashion.</p>
-            <p>Whether you want to explore the rituals of Aphrodite, lose yourselves in a massive hammock that will cocoon you in history and culture, or experience Cycas revoluta and Olea europaea in an alternative way, artists Sofia Stevi, Marlene Stark and Talisa Lallai, will certainly provide you with heaps of food for thought!</p>
           </div>
         </div>
         <div class="experiences-entry columns-item">
@@ -213,12 +210,10 @@
         <div class="experiences-entry columns-item">
           <h3>A whole new sound experience with Louvana Records</h3>
           <div class="experiences-entry-image">
-            <img src="/images/experiences/louvana.png">
+            <a href="#experience/louvana"><img src="/images/experiences/louvana.png"></a>
           </div>
           <div class="experiences-entry-text">
             <p>Prick up your ears- you’ll want to be ready for this! Following on from last year’s success, the ABR is proudly collaborating with Louvana Records, giving you the unique opportunity to experience the process of live recording as you immerse yourselves in a world of unusual combinations, original sounds and the most unpredictable beats!</p>
-            <p>With all the action to take place in a guerrilla studio, exceptionally talented members of local and visiting bands - all with different backgrounds and experiences – will come together to record a one off live performance. </p>
-            <p><a href="https://www.youtube.com/watch?v=Z1b3RQ6U_fU" target="_blank">Listen to last year’s recording on YouTube</a>!</p>
           </div>
         </div>
         <div class="experiences-entry columns-item">
@@ -480,7 +475,21 @@
   </section>
 
 
-  <section id="lineup__{{ $key }}" class="page lineup-page" v-repeat="lineUpEntries" v-attr="style: 'background-image:url(/images/lineup/{{ $key }}.png);'">
+  <section id="experience__{{ $key }}" class="page experience-page is-modal" v-repeat="experienceEntries" v-attr="style: 'background-image:url(/images/experience/{{ $key }}.png);'">
+    <section class="section" >
+      <section class="section-inner">
+        <h1 class="page-title">
+          {{ name }}
+        </h1>
+        <div class="text">
+          <div v-html="text"></div>
+        </div>
+        <div style="margin: 0 auto; width: 85%;" v-repeat="item:embed" class="embed"></div>
+      </section>
+    </section>
+  </section>
+
+  <section id="lineup__{{ $key }}" class="page lineup-page is-modal" v-repeat="lineUpEntries" v-attr="style: 'background-image:url(/images/lineup/{{ $key }}.png);'">
     <section class="section" >
       <section class="section-inner">
         <h1 class="page-title">
@@ -504,9 +513,9 @@
   <script type="text/html" id="lineup-entries-template">
     <ol id="lineup-entries" class="lineup-entries">
       <li class="lineup-entry line-entry-{{ entry.$key }}" v-repeat="entry:lineUpEntries" v-show="entry.name">
-        <a class="lineup-entry-name" href="#/lineup/{{ entry.$key }}" v-if="entry.name" v-attr="style:'background: url(images/lineup/{{ entry.$key }}/{{ entry.$key }}.jpg) no-repeat center 1.1em;background-size: contain;height:150px'">{{ entry.name }}</a>
+        <a class="lineup-entry-name" href="#lineup/{{ entry.$key }}" v-if="entry.name" v-attr="style:'background: url(images/lineup/{{ entry.$key }}/{{ entry.$key }}.jpg) no-repeat center 1.1em;background-size: contain;height:150px'">{{ entry.name }}</a>
         <!--
-        <a class="lineup-entry-name" href="#/lineup/{{ entry.$key }}" v-if="entry.name">{{ entry.name }}<img v-attr="src:'images/lineup/{{ entry.$key }}/{{ entry.$key }}.jpg'" width="200" height="86"></a>
+        <a class="lineup-entry-name" href="#lineup/{{ entry.$key }}" v-if="entry.name">{{ entry.name }}<img v-attr="src:'images/lineup/{{ entry.$key }}/{{ entry.$key }}.jpg'" width="200" height="86"></a>
         -->
         <em class="lineup-entry-label" v-repeat="label:entry.labels" v-html="label"></em>
       </li>
@@ -1241,7 +1250,33 @@
           text: '<p>&lsquo;V&rsquo;, &lsquo;N&rsquo; &amp; &lsquo;M&rsquo;</p>'
         }
       ]
-    }
+    };
+    abr.$data.experience = {
+      intoto: {
+        name: 'Artistic explorations, mind alterations: Getting creative with Simone Philippou',
+        text: '<p>It’s all about daring to embrace a new experience through unusual artistic explorations as Simone Philippou takes you on a creative journey you’re not likely to forget!</p><p>Known for her brilliant illustration work at the INTOTO studio in the heart of Nicosia, where she spends much time working alongside sister Ioanna Philippou, she’ll now be getting creative juices flowing on the festival grounds as she brings influences from a recent trip to Japan into an interactive experience with all those who dare to push the limits of their imagination and embrace something new.</p>',
+        embed: [
+
+        ]
+      },
+
+      louvana: {
+        name: 'A whole new sound experience with Louvana Records',
+        text: '<p>Prick up your ears- you’ll want to be ready for this! Following on from last year’s success, the ABR is proudly collaborating with Louvana Records, giving you the unique opportunity to experience the process of live recording as you immerse yourselves in a world of unusual combinations, original sounds and the most unpredictable beats!</p><p>With all the action to take place in a guerrilla studio, exceptionally talented members of local and visiting bands - all with different backgrounds and experiences – will come together to record a one off live performance.</p>',
+        embed: [
+            '<iframe width="560" height="460" src="https://www.youtube.com/embed/Z1b3RQ6U_fU" frameborder="0" allowfullscreen></iframe>'
+        ]
+      },
+
+      name: {
+        name: '',
+        text: '',
+        embed: [
+
+        ]
+      }
+
+    };
     abr.$data.slots.toObjectByStage = function(date_start, date_end) {
       var slots = {},
           slot,
@@ -1338,9 +1373,16 @@
     abr.views.lineupEntry = new Vue({
       el: 'body',
       data: {
-        lineUpEntries: abr.$data.lineup
+        lineUpEntries: abr.$data.lineup,
+        experienceEntries: abr.$data.experience
       }
     });
+
+    // abr.views.experienceEntry = new Vue({
+    //   el: 'body',
+    //   data: {
+    //   }
+    // });
 
     abr.nav_global = $('.nav-global');
     abr.nav_mobile = $('.nav-mobile');
@@ -1389,13 +1431,13 @@
         this.unset();
         this.id = id;
         this.path = path;
-        this.getEl().addClass('is-modal');
+        this.getEl().addClass('is-modal--active');
       },
       unset: function() {
         if (this.id) {
           console.log('modal unset', this.id);
           this.hide();
-          this.getEl().removeClass('is-modal');
+          this.getEl().removeClass('is-modal--active');
           this.id = null;
         }
       }
@@ -1403,14 +1445,16 @@
 
     $('body').on('click', '.modal-close', function(e) {
       var prevPage = window.location.toString();
-      window.history.go(-1);
-      setTimeout(function(){
-        if (window.location.toString() === prevPage) {
-            window.location = '#';
-        }
-      }, 200);
+      if (hashchanges > 1) {
+        window.history.go(-1);
+      }
+      else {
+        window.location = '#';
+      }
       return false;
     });
+
+    var hashchanges = 0;
 
     $(window).on('resize', function(e) {
         var nav_width = (function(items) {
@@ -1429,19 +1473,20 @@
           abr.nav_global.removeClass('minimize');
         }
     }).on('hashchange', function() {
-      var hash = (location.hash || '#/').split('#/')[1] || '',
+      var hash = (location.hash || '#').split('#')[1] || '',
           id = hash.replace(/\//g,  '__'),
           path = hash.split('/'),
-          $el = $('#' + id);
+          $el = $('#' + id + '').hasClass('is-modal');
 
-      console.warn('location', id, $el.length, hash);
+      console.warn('location', path, id, $el, hash);
 
-      if ($el.length) {
+      if ($el) {
         modal.set(id, path);
         requestAnimationFrame(function() {
           modal.show();
           var item = modal.getItem();
-          if (item && item.embed && path[0] === 'lineup' ) {
+          if (item && item.embed &&
+              (path[0] === 'lineup' || path[0] === 'experience')) {
             $('.embed', modal.getEl()).each(function(i) {
               $(this).html( item.embed[i] );
             });
@@ -1452,25 +1497,7 @@
         modal.unset();
       }
 
-      // $('.page.is-active, a.is-active').removeClass('is-active');
-      // subs.forEach(function(sub) {
-      //   $('a[href="#/' + sub + '"]').addClass('is-active');
-      // });
-      // $('a[href="#/' + hash + '"]').addClass('is-active');
-      if (!abr.views.id) {
-        // abr.views[id] = new Vue({
-        //   el: '#' + id,
-        //   data: abr.viewData[id]
-        // });
-      }
-      // if (abr._headroom) {
-      //   abr._headroom.destroy();
-      // }
-      // abr._headroom = new Headroom($(".nav-global")[0], {
-      //   scroller: $el[0]
-      // });
-      // abr._headroom.init();
-      // $el.addClass('is-active').scrollTop(0);
+      hashchanges++;
     }).trigger('hashchange').trigger('resize');
 
     abr._headroom = new Headroom($(".nav-global")[0]);
