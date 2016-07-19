@@ -176,19 +176,29 @@ input {
 }
 .page-title {
   /*color: #f3bd2b;*/
-  color: #efb177;
+  font-family: 'Changa One', sans-serif;
+  /*color: #efb177;*/
+  color: #14626b;
   text-shadow: 2px -2px 1px rgba(0, 0, 0, 0.22);
   font-weight: 300;
   text-transform: uppercase;
-  text-align: center;
-  font-size: 5em;
+  /*text-align: center;*/
+  font-size: 4em;
   max-width: 100%;
   padding: 0;
   margin: 0;
   line-height: 1.2;
 }
 .page-subtitle {
-
+  font-size: 1.45em;
+  color: rgba(251, 251, 251, 0.75);
+  line-height: 1;
+  font-weight: normal;
+  margin: 0 0 1em 0;
+}
+.page-subtitle.small {
+  font-size: 1em;
+  margin: 0 0 1em 0;
 }
 .intro-title,
 .intro-subtitle {
@@ -275,7 +285,7 @@ input {
 .facilities-entry .facilities-entry-other h3,
 .facilities-entry .facilities-entry-menu h3,
 .facilities-entry .facilities-entry-remember h3 {
-  color: #c6e2d1;
+  /*color: #c6e2d1;*/
 }
 .facilities-entry-health {
     /*background-color: rgba(255, 127, 80, 0.69);*/
@@ -465,19 +475,6 @@ input {
 #lineup .lineup-entry-label:nth-child(2):after {
   content: ")";
 }*/
-.page-subtitle {
-  font-size: 1.45em;
-  color: rgba(251, 251, 251, 0.75);
-  line-height: 1;
-  font-weight: normal;
-}
-h2.page-subtitle {
-  text-align: center;
-}
-.page-subtitle.small {
-  font-size: 1em;
-  margin: 0 0 1em 0;
-}
 .lineup-page-links {
   margin: 0 0 1em 0;
 }

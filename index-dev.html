@@ -21,7 +21,7 @@
   <meta property="og:description" content="">
   <meta property="description" content="">
   <meta name="keywords" content="The Afro Banana Republic Festival, Cyprus">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Changa+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <style type="text/css">
     @media all and (max-width: 499px) {
@@ -161,16 +161,18 @@
 
 
   <section id="experiences" class="page">
-    <h1 class="page-title">Experiences</h1>
-    <h2 class="page-subtitle">Otherworldly Experiences in the Parallel Universe of the ABR Festival</h2>
     <section class="section experiences">
-      <section class="section-inner experiences-entries columns">
-        <div class="experiences-entry columns-item" v-repeat="experienceEntries">
-          <h3><a href="#experience/{{ id }}">{{ name }}</a></h3>
-          <div class="experiences-entry-image">
-            <a href="#experience/{{ id }}"><img src="/images/experiences/{{ id }}.png"></a>
+      <section class="section-inner">
+        <h1 class="page-title">Experiences</h1>
+        <h2 class="page-subtitle">Otherworldly Experiences in the Parallel Universe of the ABR Festival</h2>
+        <div class="experiences-entries columns">
+          <div class="experiences-entry columns-item" v-repeat="experienceEntries">
+            <h3><a href="#experience/{{ id }}">{{ name }}</a></h3>
+            <div class="experiences-entry-image">
+              <a href="#experience/{{ id }}"><img src="/images/experiences/{{ id }}.png"></a>
+            </div>
+            <!-- <div class="experiences-entry-text" v-html="text"></div> -->
           </div>
-          <!-- <div class="experiences-entry-text" v-html="text"></div> -->
         </div>
       </section>
     </section>
@@ -178,9 +180,9 @@
 
 
   <section id="info" class="page">
-    <h1 class="page-title">Your Guide to ABR</h1>
     <section class="section facilities">
       <section class="section-inner facilities-entries">
+        <h1 class="page-title">Your Guide to ABR</h1>
         <div class="facilities-entry columns">
             <div class="columns-item">
               <h3>Camping &amp; Accommodation</h3>
@@ -308,10 +310,10 @@
   </section>
 
   <section id="location" class="page">
-    <h1 class="page-title">Getting There</h1>
-    <h2 class="page-subtitle">Kornos Camping Area, Larnaca, Cyprus</h2>
     <section class="section location">
       <section class="section-inner location-content">
+        <h1 class="page-title">Getting There</h1>
+        <h2 class="page-subtitle">Kornos Forest Area, Larnaca, Cyprus</h2>
         <div class="columns">
           <div class="columns-item location-parking">
             <h3>Parking</h3>
@@ -1497,7 +1499,7 @@
           abr.nav_global.removeClass('minimize');
         }
 
-        requestAnimationFrame(resizeColumns);
+        // requestAnimationFrame(resizeColumns);
     }).on('hashchange', function() {
       var hash = (location.hash || '#').split('#')[1] || '',
           id = hash.replace(/\//g,  '__'),
