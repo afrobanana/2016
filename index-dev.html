@@ -113,12 +113,14 @@
     <section class="section">
       <section class="section-inner">
         <h1 class="page-title">Timetable</h1>
+        <h2 class="page-subtitle">
+            Gates open on the 19<sup>th</sup> at 14:00.
+            Gates close on the 21<sup>st</sup> at 14:00.
+        </h2>
 
         <div class="timetable-day">
           <div class="timetable-day-info">
             <h2 class="timetable-day-name">Friday 19<sup>th</sup></h2>
-            <p class="small">Gates open on the 19<sup>th</sup> at 14:00.</p>
-            <p class="small">Gates close on the 21<sup>st</sup> at 14:00.</p>
           </div>
           <div class="timetable-stages">
             <dl class="timetable-stage" v-repeat="timetable.friday">
@@ -168,7 +170,7 @@
           <div class="experiences-entry-image">
             <a href="#experience/{{ id }}"><img src="/images/experiences/{{ id }}.png"></a>
           </div>
-          <div class="experiences-entry-text" v-html="text"></div>
+          <!-- <div class="experiences-entry-text" v-html="text"></div> -->
         </div>
       </section>
     </section>
@@ -176,6 +178,38 @@
 
 
   <section id="info" class="page">
+    <h1 class="page-title">Your Guide to ABR</h1>
+    <section class="section facilities">
+      <section class="section-inner facilities-entries">
+        <div class="facilities-entry columns">
+            <div class="columns-item">
+              <h3>Camping &amp; Accommodation</h3>
+              <p>Enjoy the glories of the great outdoors and make the most of the two-day experience by pitching up a tent or caravan under the cool shade of leafy eucalyptus and pine trees on the Festival campsite.</p>
+              <p class="small">Prefer the comfort of your own room? Then there’s a great place to stay just a three minute drive from the Festival site to cater to your needs.</p>
+              <p>
+                <a href="" class="btn">Learn More</a>
+              </p>
+            </div>
+            <div class="columns-item">
+              <h3>Food &amp; Drinks</h3>
+              <p>Whether you’re after breakfast, lunch or dinner, a whole team of happy cooks will be on hand throughout the duration of the event to curb your hunger pangs and satiate your taste buds with a range of sweet and savoury delights. With a greater selection of food than ever before, select eateries and street food vendors will be catering to your every need from morning to night.</p>
+              <p>
+                <a href="" class="btn">Learn More</a>
+              </p>
+            </div>
+            <div class="columns-item">
+              <h3>Environment, Health &amp; Safety</h3>
+              <p>We care about your safety and being friendly to the environment. So for your peace of mind and for the environments sake, please read on!</p>
+              <p>
+                <a href="" class="btn">Learn More</a>
+              </p>
+            </div>
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <section id="Xinfo" class="page" style="display: none;">
     <h1 class="page-title">Your Guide to ABR</h1>
     <section class="section facilities">
       <h2 class="page-subtitle">Camping &amp; Accommodation</h2>
@@ -278,9 +312,23 @@
     <h2 class="page-subtitle">Kornos Camping Area, Larnaca, Cyprus</h2>
     <section class="section location">
       <section class="section-inner location-content">
+        <div class="columns">
+          <div class="columns-item location-parking">
+            <h3>Parking</h3>
+            <p>There will be heaps of space to park your car in a designated parking area, but the parking has now moved to a location that’s a three minutes drive away, with a far greater capacity than previous years. A helpful team will be on hand to direct all visitors to the location, where you can park and then catch a FREE shuttle bus to the Festival entrance. So when parking your car, keep your eyes peeled for the clearly ‘labelled’ bus stop to board the Festival shuttle bus.</p>
+          </div>
+          <div class="columns-item location-shuttle">
+            <h3>Shuttle Bus</h3>
+            <p>The ABR Festival team will be operating a dedicated shuttle bus service between the parking areas and the Festival entrance to make it as easy and hassle free as possible for you to park and then get to and from the event. There will be a frequent service to ensure you don’t have to wait long and that your journey is quick and comfortable. Bus stops will be clearly marked at both the parking area and Festival entrance/exit.</p>
+          </div>
+          <div class="columns-item">
+            <h3>Car Sharing</h3>
+            <p>Why not get your friends together to make the most of the drive down to the Festival? Sharing a ride is fun, will save you petrol money, it’s environmentally friendly and it will be easier for everyone to park once on site!</p>
+          </div>
+        </div>
         <div class="location-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d209417.31958622337!2d33.402445!3d34.902795!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e0a23057b45e61%3A0x43ca040779fc6568!2sTHE+MOTHERSHIP+-+THE+AFRO+BANANA+REPUBLIC+FESTIVAL!5e0!3m2!1sen!2sus!4v1468411039252" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
-          <a href="images/site/map.jpg"><img src="images/site/map.jpg"></a>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.141220505553!2d33.40029831443276!3d34.90290537987106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de04a7d9365cb9%3A0xbd7734f7a94bf975!2sThe+2016+Afro+Banana+Republic!5e0!3m2!1sen!2sus!4v1468928850728" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <a href="images/site/map.png"><img src="images/site/map.png"></a>
           <!-- <a href="https://goo.gl/maps/4djk7" target="_blank"><span>Google Map</span><img src="images/bg_location.jpg"></a> -->
         </div>
         <div class="columns">
@@ -309,20 +357,6 @@
               <li>Keep going until you find the roundabout of Mosfiloti.</li>
               <li>Turn left and follow the old Nicosia-Limassol road towards Limassol for 3 km, until you reach the Festival Checkpoint where the Crew assistants and signage will direct you to the Parking Area, Campers Drop-off or Campers Parking.</li>
             </ol>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="columns-item location-parking">
-            <h3>Parking</h3>
-            <p>There will be heaps of space to park your car in a designated parking area, but the parking has now moved to a location that’s a three minutes drive away, with a far greater capacity than previous years. A helpful team will be on hand to direct all visitors to the location, where you can park and then catch a FREE shuttle bus to the Festival entrance. So when parking your car, keep your eyes peeled for the clearly ‘labelled’ bus stop to board the Festival shuttle bus.</p>
-          </div>
-          <div class="columns-item location-shuttle">
-            <h3>Shuttle Bus</h3>
-            <p>The ABR Festival team will be operating a dedicated shuttle bus service between the parking areas and the Festival entrance to make it as easy and hassle free as possible for you to park and then get to and from the event. There will be a frequent service to ensure you don’t have to wait long and that your journey is quick and comfortable. Bus stops will be clearly marked at both the parking area and Festival entrance/exit.</p>
-          </div>
-          <div class="columns-item">
-            <h3>Car Sharing</h3>
-            <p>Why not get your friends together to make the most of the drive down to the Festival? Sharing a ride is fun, will save you petrol money, it’s environmentally friendly and it will be easier for everyone to park once on site!</p>
           </div>
         </div>
       </section>
@@ -536,7 +570,7 @@
           tag: 'DE',
           text: 'A Berlin based duo playing techno beats, Alex Tsiridis and Hüseyin Evirgen are well established on the electronic music scene, following several releases with Prologue Music including the highly acclaimed double 12" Tiamat and their triple vinyl debut album, Centres of Distraction.  Well known for their intricate, hardware based live shows, they’ve jetted around the world to perform, from Berlin\'s Berghain and Barcelona\'s Sonar Festival to Tokyo, Taipei and across the United States. A new chapter for Cassegrain has now begun with their very own label, Arcing Seas (an anagram of Cassegrain).',
           labels: [
-            'Dj Set', 'Techno'
+            'Live', 'Techno'
           ],
           links: {
             SoundCloud: 'http://bit.ly/CASSEGRAIN'
@@ -598,7 +632,7 @@
           tag: 'IT',
           text: 'The Italian-born, Dutch-based professional sound engineer, musician and producer Marco Antonio Spaventi, is known by many as a prolific producer of Chicago inspired house music, techno, synth-driven electronic  and ambient, backed by an extensive solo output, both in Holland and his homecountry. One the one hand, he enjoys happy alliances with Aroy Dee and M>O>S Recordings  while involved in the R-A-G collective and in the Crystal Maze duo. On the Italian side, Spaventi has released the Cinema EP for the Slow Motion soundtrack series, while his long-standing relationship with Pizzico Records has led to several releases as well as the first vinyl Viaggi LP. Armed with his newly released Isola Sommersa album (June 2016), he’ll be arriving at the ABR festival to whisk crowds far far away with his house, acid and ambient sounds!',
           labels: [
-            'Dj Set', 'House', 'Acid', 'Ambient', 'Soundtracks'
+            'Live', 'House', 'Acid', 'Ambient', 'Soundtracks'
           ],
           links: {
             SoundCloud: 'http://bit.ly/MASPAVENTI'
@@ -1421,6 +1455,31 @@
 
     var hashchanges = 0;
 
+    function resizeColumns() {
+      var columns = $('.columns');
+
+      columns.each(function() {
+        var items = $('.columns-item', this),
+            heights = [],
+            maxHeight;
+
+        items.each(function() {
+          $(this).height('auto');
+          heights.push($(this).height());
+        });
+
+        if (!heights.every(function(h) { return h > 0 })) {
+          return;
+        }
+        console.warn(this, heights);
+        maxHeight = Math.max.apply(Math, heights);
+
+        items.each(function(i) {
+          $(this).height(maxHeight);
+        });
+      });
+    }
+
     $(window).on('resize', function(e) {
         var nav_width = (function(items) {
             var w = 0;
@@ -1437,6 +1496,8 @@
         } else {
           abr.nav_global.removeClass('minimize');
         }
+
+        requestAnimationFrame(resizeColumns);
     }).on('hashchange', function() {
       var hash = (location.hash || '#').split('#')[1] || '',
           id = hash.replace(/\//g,  '__'),
