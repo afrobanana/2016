@@ -21,10 +21,14 @@ h3 a {
 }
 body {
   font-family: 'Roboto', sans-serif;
-
   font-size: 16px;
   line-height: 1.556;
-  color: #333;
+  color: #fff;
+  background-color: #1B8F9D;
+}
+body,
+.lineup-page,
+.experience-page {
   background-image: linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%);
   background-attachment: fixed;
 }
@@ -51,53 +55,51 @@ input {
   font: inherit;
   padding: 0.2em 0.4em;
 }
+
 .small {
   font-size: 0.85em;
 }
+
 .page {
-  /*position: fixed;*/
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
   overflow: auto;
-  /*display: none;*/
 }
-/*.page:after {
-  position: fixed;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  height: 4em;
-  content: " ";
-  background: -webkit-gradient(linear, left top, left bottom,
-                               from(rgba(204, 204, 204, 0)),
-                               to(#000));
-  z-index: 4;
-  opacity: 0.5;
-}*/
-.page.is-active {
-  display: block;
+
+.page-title {
+  font-family: 'Changa One', sans-serif;
+  color: #14626b;
+  text-shadow: 2px -2px 1px rgba(0, 0, 0, 0.22);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 4em;
+  max-width: 80%;
+  padding: 0;
+  margin: 0;
+  line-height: 1.2;
 }
+.page-subtitle {
+  font-size: 1.2em;
+  color: rgba(251, 251, 251, 0.75);
+  line-height: 1;
+  font-weight: normal;
+  margin: 0 0 1em 0;
+}
+
+
+
 .section {
-  /*text-align: center;*/
   position: relative;
   z-index: 2;
   min-height: 100%;
-  box-sizing: border-box;
-
 }
 .section-inner {
   position: relative;
   z-index: 2;
   overflow: auto;
-  /*min-height: 100%;*/
   padding: 2em 2em;
+  box-sizing: border-box;
 }
-.section + .section .section-inner {
-  /*padding: 1em 0;*/
-}
+
+
 .nav-global {
   position: fixed;
   top: 0;
@@ -161,12 +163,6 @@ input {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
 }
-/*.nav-global.expand ol {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}*/
 .nav-global.expand li a,
 .nav-global.expand li {
   display: block;
@@ -174,32 +170,8 @@ input {
 .nav-global.expand a {
   padding: 0.5em 0;
 }
-.page-title {
-  /*color: #f3bd2b;*/
-  font-family: 'Changa One', sans-serif;
-  /*color: #efb177;*/
-  color: #14626b;
-  text-shadow: 2px -2px 1px rgba(0, 0, 0, 0.22);
-  font-weight: 300;
-  text-transform: uppercase;
-  /*text-align: center;*/
-  font-size: 4em;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-  line-height: 1.2;
-}
-.page-subtitle {
-  font-size: 1.45em;
-  color: rgba(251, 251, 251, 0.75);
-  line-height: 1;
-  font-weight: normal;
-  margin: 0 0 1em 0;
-}
-.page-subtitle.small {
-  font-size: 1em;
-  margin: 0 0 1em 0;
-}
+
+
 .intro-title,
 .intro-subtitle {
   margin-bottom: 0;
@@ -207,126 +179,27 @@ input {
   width: 100%;
   text-indent: -999em;
 }
-.lineup-entries {
-  list-style: none;
-  margin: 2em 0;
-  text-align: center;
-}
-.staff-entries {
-  font-size: 0.85em;
-}
-/*.facilities-entries,
-.timetable-stages {
-  overflow: hidden;
-}*/
-.lineup-entry {
-  display: inline-block;
-  margin: 0.5em;
-  width: 12em;
-  vertical-align: top;
-  line-height: 1;
-}
-/*.facilities-entry,*/
-.staff-entry,
-.timetable-stage {
-  /*display: inline-block;*/
-  /*width: 20em;*/
-/*  width: 33%;
-  max-width: 100%;
-  padding: 0 2%;
-  vertical-align: top;
-  box-sizing: border-box;*/
-}
-.facilities-entry dt,
-.timetable-stage dt,
-.staff-entry dt {
-  /*font-weight: bold;*/
-  font-size: 1.3em;
-  margin-bottom: 0.5em;
-  color:#444;
-  /*color: #C6E2D1;*/
-  /*color: rgba(0, 0, 0, 0.7);*/
-  /*color: #f0b61a;*/
-  /*background-color: rgba(0, 0, 0, 0.3);*/
-}
-/*.location-content,*/
+
+
 .columns {
-  color: #fff;
   column-count: 3;
 }
 .columns-item {
   margin-bottom: 1.5em;
-  /*background-color: rgba(255, 250, 240, 0.65);*/
-  /*padding: 1em;*/
   break-inside: avoid;
   box-sizing: border-box;
   vertical-align: top;
   display: inline-block;
 }
-.facilities-entry {
-  margin-bottom: 2em;
-}
 
-/*.location-parking,*/
-/*.location-shuttle,*/
-.location-from-nicosia,
-.location-from-larnaca,
-.location-from-limassol,
-.facilities-entry .facilities-entry-other,
-.facilities-entry .facilities-entry-menu,
-.facilities-entry .facilities-entry-remember {
-  background: none;
-  font-size: 0.85em;
-}
-.experiences-entry h3,
-.location-from-nicosia h3,
-.location-from-larnaca h3,
-.location-from-limassol h3,
-.facilities-entry .facilities-entry-other h3,
-.facilities-entry .facilities-entry-menu h3,
-.facilities-entry .facilities-entry-remember h3 {
-  /*color: #c6e2d1;*/
-}
-.facilities-entry-health {
-    /*background-color: rgba(255, 127, 80, 0.69);*/
-    /*background-color: rgba(233, 184, 137, 0.42);*/
-    /*padding: 2em;*/
-    font-size: 0.8em;
-    /*margin: 2em -1em;*/
-}
-/*.facilities-entry dd h3 {
-  break-after: avoid;
-}
-.facilities-entry dd h3 + * {
-  break-before: avoid;
-}*/
-.staff-entry dd,
-.facilities-entry dd {
-  text-align: left;
-}
-.staff-entry dd p,
-.facilities-entry dd p {
-  margin-bottom: 0;
-}
-.staff-entry {
-  /*width: 17em;*/
-}
-.staff-entry a {
-  color: inherit;
-}
+
+
+
 
 .timetable-day {
   overflow: auto;
   margin: 0 0 4em 0;
-  /*border-top: 2px solid #fff;*/
-  /*padding: 0 0 1em 0;*/
-  /*border-bottom: 1px solid #ccc;*/
 }
-/*.timetable-day-info,
-.timetable-stage {
-  float: left;
-  width: 19%;
-}*/
 .timetable-day-info {
   float: left;
   width: 19%;
@@ -335,26 +208,24 @@ input {
   /*font-size: 1.9em;*/
   color: #fff;
 }
-.timetable-stages {
 
-    /*max-width: 860px;
-    margin: 0 auto;*/
+.timetable-stages {
+  column-count: 3;
 }
 .timetable-stage {
   padding: 0;
   text-align: center;
-  /*margin-right: 1%;*/
-  /*background-color: rgba(255, 250, 240, 0.65);*/
-  /*border-right: 2px solid #fff;*/
-  /*margin-right: 0.5%;
-  background-color: rgba(255,255,255,0.2);*/
+  break-inside: avoid;
+  box-sizing: border-box;
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1em;
+  background-color: rgba(255, 250, 240, 0.65);
 }
 .timetable-stage:last-child {
   /*border-right: none;*/
-  margin-right: 0;
-}
-.timetable-stages + .page-title {
-  /*margin-top: 1em;*/
+  /*margin-right: 0;*/
 }
 .timetable-stage dt {
   background-color: rgba(232, 67, 71, 0.64);
@@ -376,145 +247,42 @@ input {
   font-size: 0.8em;
   display: inline-block;
 }
+
 .sponsors img {
   display: block;
   margin: 0 auto;
 }
-/*#intro .section:after {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  content: " ";
-}*/
-#about .text p {
-  text-align: left;
-}
-.text p strong {
-/*  color: #C6E2D1;
-  padding: 0 0.4em;
 
-  background-color: rgba(0, 0, 0, 0.4);
-*/}
-.lineup-entry-name {
-  display: block;
-  /*font-size: 1.2em;*/
-  background-color: rgba(0, 0, 0, 0.4);
-  text-decoration: none;
-  position: relative;
-  font-weight: bold;
-}
-.lineup-entry-name:before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: background 300ms;
-}
-.lineup-entry-name:hover:before {
-  background-color: transparent;
-}
-.lineup-entry-name img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  vertical-align: top;
-}
-.lineup-entry-label {
-  font-size: 0.8em;
-  text-transform: uppercase;
-  display: inline-block;
-  margin: 0.2em 0.5em;
-  font-style: normal;
-}
-.lineup-page {
-  display: none;
-}
-.lineup-page .page-title,
-.experience-page .page-title {
-  text-shadow: 4px 3px 0px #735a58,
-               6px 5px 0px rgba(198, 226, 209, 0.7);
-  max-width: 10em;
-  margin: 0 auto;
-  line-height: 1;
-  font-size: 4em;
-}
-.experience-page,
-.lineup-page  {
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-blend-mode: overlay;
-  /*background-color: rgba(255, 255, 255, 0.6);*/
-}
-.experience-page .text,
-.lineup-page .text {
-  background-color: rgba(255, 250, 240, 0.65);
-  box-sizing: border-box;
-  padding: 2em;
-}
 .experience-page .embed iframe,
 .lineup-page .embed iframe {
   width: 100%;
 }
-.lineup-page .lineup-entry-label:first-child {
-  /*color: #fff;*/
+
+.experience-page-content,
+.lineup-page-content {
+  margin: 2em 0;
+  overflow: hidden;
 }
-/*.lineup-page .lineup-entry-label:first-child:before,
-#lineup .lineup-entry-label:nth-child(2):before {
-  content: "(";
-}
-.lineup-page .lineup-entry-label:first-child:after,
-#lineup .lineup-entry-label:nth-child(2):after {
-  content: ")";
-}*/
-.lineup-page-links {
-  margin: 0 0 1em 0;
-}
-/*.lineup-page .section:first-child:before {
-  content: " ";
-  position: absolute;
-  top: 2.4em;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #91AA9B;
-  opacity: 0.8;
-}*/
-#tickets .text,
-#volunteer .text,
-/*#location .text,*/
-#about .text,
+
 .experience-page .text,
 .lineup-page .text {
-  max-width: 32em;
-  margin: 2em auto;
+  float: left;
+  width: 49%;
 }
-#location .text {
-  /*max-width: 90%;*/
-  margin: 0 auto;
+.experience-page .embed,
+.lineup-page .embed {
+  float: right;
+  width: 49%;
 }
-#tickets .text.small {
-  text-align: left;
-  font-size: 0.65em;
+
+.lineup-entry-label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0.2em 0.5em;
+    font-style: normal;
 }
-#tickets .text.small ol {
-  /*list-style: none;*/
-}
-#about .text em {
-  font-weight: bold;
-  font-style: normal;
-}
-.pricelist-entries {
-  margin-top: 2em;
-}
+
 .headroom {
   transition: transform 200ms linear;
 }
@@ -526,59 +294,21 @@ input {
   transform: translateY(-100%);
   background-color: rgba(0, 0, 0, 0);
 }
+
 .location-map {
-  max-width: 100%;
-  position: relative;
-  line-height: 1;
   overflow: auto;
   margin-bottom: 2em;
 }
-.location-map a:before {
-  content: " ";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-.location-map a {
-  line-height: 1;
-  display: block;
-  position: relative;
-}
-.location-map a span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  text-decoration: underline;
-  transform: translate(-50%, -50%);
-}
+
 .location-map iframe {
   width: 60%;
   float: left;
 }
 .location-map img {
   float: right;
-  /*margin-left: 2em;*/
   max-width: 35%;
 }
-/*.col-left {
-  float: left;
-  clear: left;
-}
-.col-right,
-.col-left {
-  text-align: left;
 
-  width: 47%;
-}
-.col-right {
-  float: right;
-  clear: right;
-}*/
 .clear {
   float: none;
   clear: both;
@@ -587,7 +317,6 @@ input {
 
 #intro {
   height: 100%;
-  /*background-image: linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%);*/
 }
 
 #hero {
@@ -600,42 +329,19 @@ input {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  /*background-attachment: fixed;*/
   z-index: 0;
 }
-#hero:after {
-/*  content: " ";
-  display: block;
-  background-image: url("images/site/plug.png");
-  background-repeat: no-repeat;*/
-}
+
 #lineup {
   display: none;
 }
 
-#timetable {
-  /*background-color: #fffaf0;*/
-}
-
-#timetable .page-subtitle {
-  font-size: 1.2em;
-  margin: 0 0 1em 0;
-}
-
-#location {
-  /*background-color: rgba(198, 226, 209, 0.65);*/
-}
-#facilities {
-  /*background-color: rgba(241, 225, 203, 0.46);*/
-}
 #connect {
-  /*background-color: rgba(52, 177, 241, 0.32);*/
+  text-align: center;
 }
 #connect .page-title {
   font-size: 2em;
-}
-.connect-newsletter {
-  text-align: center;
+  margin: 0.5em auto;
 }
 
 .experiences-entry {
@@ -649,7 +355,7 @@ input {
 .experiences-entry-text {
   font-size: 0.85em;
 }
-.experiences-entry p  ~ p {
+.experiences-entry p ~ p {
 
   display: none;
 }
@@ -675,10 +381,10 @@ input {
   cursor: pointer;
   position: fixed;
   z-index: 4444;
-  left: 1em;
+  right: 1em;
   top: 1em;
   line-height: 1em;
-  color: #000;
+  color: #fff;
   font-style: normal;
   font-size: 3em;
   text-shadow: 0 0 10px rgba(255,255,255, 0.7);
@@ -697,31 +403,13 @@ input {
 .modal-visible .modal-close {
   display: block;
 }
-.modal-hidden .is-modal  {
 
-}
 
-/*@media all and (max-width: 960px) {*/
-  .timetable-stages {
-    column-count: 3;
-    /*column-gap: 0;*/
-    /*background-color: rgba(255, 250, 240, 0.65);*/
-  }
-  .timetable-stage {
-    break-inside: avoid;
-    box-sizing: border-box;
-    vertical-align: top;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 1em;
-    background-color: rgba(255, 250, 240, 0.65);
-  }
-/*}*/
 @media all and (max-width: 789px) {
   .columns {
     column-count: 2;
   }
-  /*.timetable-stage,*/
+
   .timetable-day-info {
     float: none;
     width: auto;
@@ -730,14 +418,6 @@ input {
   .timetable-stages {
     column-count: 2;
   }
-/*  .timetable-stage {
-    break-inside: avoid;
-    box-sizing: border-box;
-    vertical-align: top;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 1em;
-  }*/
 }
 @media all and (max-width: 499px) {
   .timetable-stages,

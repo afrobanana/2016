@@ -402,7 +402,9 @@
       <section class="section-inner">
         <h1 class="page-title">Production</h1>
         <div class="text">
-          <div v-html="about.text"></div>
+          <p>The Festival is organized by the non-profit organization “ABR - Alternative Brains Rule”. Its team is composed of young people from different professional fields, that are involved in the arts, and have set out to develop the Cypriot creative alternative scene. By encouraging collaborations between different fields they aim to explore the potential of home grown talent. By providing a platform for these artists to produce and present their work, they allow for them to promote their art and themselves in Cyprus and the rest of the world.</p>
+
+          <p>They  have managed to put Cyprus on the creative map of Europe, by developing an internationally recognized, alternative, creative scene. Bringing artists from Cyprus and abroad together to collaborate on projects, will allow them to display their creative abilities as well as the intricacies of modern Cypriot culture through their work.</p>
         </div>
       </section>
     </section>
@@ -454,22 +456,23 @@
     </section>
   </section>
 
-
-  <section id="experience__{{ $key }}" class="page experience-page is-modal" v-repeat="experienceEntries" v-attr="style: 'background-image:url(/images/experiences/{{ $key }}.png);'">
+  <!-- v-attr="style: 'background-image:url(/images/experiences/{{ $key }}.png);'"-->
+  <section id="experience__{{ $key }}" class="page experience-page is-modal" v-repeat="experienceEntries">
     <section class="section" >
       <section class="section-inner">
         <h1 class="page-title">
           {{ name }}
         </h1>
-        <div class="text">
-          <div v-html="text"></div>
+        <p><img src="/images/experiences/{{ id }}.png"></p>
+        <div class="experience-page-content">
+          <div class="text" v-html="text"></div>
+          <div  class="embed" v-repeat="item:embed"></div>
         </div>
-        <div style="margin: 0 auto; width: 85%;" v-repeat="item:embed" class="embed"></div>
       </section>
     </section>
   </section>
-
-  <section id="lineup__{{ $key }}" class="page lineup-page is-modal" v-repeat="lineUpEntries" v-attr="style: 'background-image:url(/images/lineup/{{ $key }}.png);'">
+  <!--  v-attr="style: 'background-image:url(/ximages/lineup/{{ $key }}.png);'" -->
+  <section id="lineup__{{ $key }}" class="page lineup-page is-modal" v-repeat="lineUpEntries">
     <section class="section" >
       <section class="section-inner">
         <h1 class="page-title">
@@ -479,28 +482,14 @@
         <h2 class="page-subtitle lineup-page-labels">
           <span class="lineup-entry-label" v-repeat="label:labels" v-html="label"></span>
         </h2>
-        <div class="text">
-          <div class="lineup-page-links">
-            <a href="{{$value}}" v-class="$key" v-repeat="links" v-text="$key" target="_blank"></a>
-          </div>
-          <div v-html="text"></div>
+        <p><img src="/images/lineup/{{ id }}.png"></p>
+        <div class="lineup-page-content">
+          <div class="text" v-html="text"></div>
+          <div v-repeat="item:embed" class="embed"></div>
         </div>
-        <div style="margin: 0 auto; width: 85%;" v-repeat="item:embed" class="embed"></div>
       </section>
     </section>
   </section>
-
-  <script type="text/html" id="lineup-entries-template">
-    <ol id="lineup-entries" class="lineup-entries">
-      <li class="lineup-entry line-entry-{{ entry.$key }}" v-repeat="entry:lineUpEntries" v-show="entry.name">
-        <a class="lineup-entry-name" href="#lineup/{{ entry.$key }}" v-if="entry.name" v-attr="style:'background: url(images/lineup/{{ entry.$key }}/{{ entry.$key }}.jpg) no-repeat center 1.1em;background-size: contain;height:150px'">{{ entry.name }}</a>
-        <!--
-        <a class="lineup-entry-name" href="#lineup/{{ entry.$key }}" v-if="entry.name">{{ entry.name }}<img v-attr="src:'images/lineup/{{ entry.$key }}/{{ entry.$key }}.jpg'" width="200" height="86"></a>
-        -->
-        <em class="lineup-entry-label" v-repeat="label:entry.labels" v-html="label"></em>
-      </li>
-    </ol>
-  </script>
 
   <!-- Data -->
   <script type="text/javascript">
@@ -1326,9 +1315,9 @@
 
   <!-- Views -->
   <script type="text/javascript">
-    Vue.component('lineup-entries', {
-      template: $('#lineup-entries-template').html()
-    });
+    // Vue.component('lineup-entries', {
+    //   template: $('#lineup-entries-template').html()
+    // });
     // abr.viewData = {
     //   lineup: {
     //     lineUpEntries: abr.$data.lineup
