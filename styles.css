@@ -228,8 +228,9 @@ input {
 }
 
 
-
-
+/************************************************
+ * timetable
+ /***********************************************/
 .timetable-day {
     overflow: auto;
     margin: 0 0 4em 0;
@@ -256,17 +257,10 @@ input {
     display: inline-block;
     width: 100%;
     margin-bottom: 1em;
-    /*background-color: rgba(255, 250, 240, 0.65);*/
     background-color: rgba(198, 226, 209, 0.35);
 }
 
-.timetable-stage:last-child {
-    /*border-right: none;*/
-    /*margin-right: 0;*/
-}
-
 .timetable-stage dt {
-    /*background-color: rgba(232, 67, 71, 0.64);*/
     background-color: rgb(198, 226, 209);
     color: #14626b;
     padding: 0.3em 0.6em;
@@ -283,9 +277,7 @@ input {
 }
 
 .timetable-stage a {
-    /*color: #20909d;*/
     color: inherit;
-    /*text-transform: lowercase;*/
 }
 
 .timetable-entry-artist-label,
@@ -295,16 +287,23 @@ input {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/************************************************
+ * sponsors
+ /***********************************************/
 .sponsors img {
     display: block;
     margin: 0 auto;
 }
 
-.experience-page .embed iframe,
-.lineup-page .embed iframe {
+.embed iframe,
+.embed iframe {
     width: 100%;
 }
 
+
+/************************************************
+ * Experience & Lineup Page
+ /***********************************************/
 .experience-page-content,
 .lineup-page-content {
     margin: 2em 0;
@@ -324,7 +323,6 @@ input {
 }
 
 .lineup-entry-label {
-    /*font-size: 0.8em;*/
     text-transform: uppercase;
     display: inline-block;
     margin: 0.2em 0.5em;
@@ -422,6 +420,7 @@ input {
     font-size: 0.8em;
 }
 
+
 .is-modal {
     position: fixed;
     top: 0;
@@ -431,7 +430,6 @@ input {
     z-index: 3333;
     display: none;
     opacity: 0;
-    /*background-image: linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%);*/
     transition: all 200ms;
 }
 
@@ -445,6 +443,9 @@ input {
 
 .is-modal .columns {
     column-count: 2;
+}
+.is-modal .columns-item {
+    display: inline-block;
 }
 
 .modal-close {
@@ -501,4 +502,52 @@ input {
 
 #about__credits .columns-item p {
     margin-bottom: 0.5em;
+}
+
+
+#get-tickets {
+    text-decoration: none;
+    position: fixed;
+    z-index: 50000;
+    background-color: #ce0000;
+    color: #fff;
+    border-radius: 50%;
+    bottom: 2em;
+    right: 2em;
+    display: block;
+    padding: 0.5em;
+    height: 30px;
+    width: 30px;
+    transition: all 100ms;
+    transform-origin: 0 0;
+    animation: tickets 2s ease-in-out infinite alternate;
+}
+#get-tickets:hover {
+    transform: rotate(-10deg);
+}
+
+@keyframes tickets {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.3) rotate(-10deg);
+    }
+}
+
+#get-tickets span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#intro .page-title {
+    display: none;
 }
