@@ -496,27 +496,6 @@ input {
     display: block;
 }
 
-@media all and (max-width: 789px) {
-    .columns {
-        column-count: 2;
-    }
-    .timetable-day-info {
-        float: none;
-        width: auto;
-        display: block;
-    }
-    .timetable-stages {
-        column-count: 2;
-    }
-}
-
-@media all and (max-width: 499px) {
-    .timetable-stages,
-    .columns {
-        column-count: 1;
-    }
-}
-
 #about__credits .columns-item p {
     margin-bottom: 0.5em;
 }
@@ -546,14 +525,6 @@ input {
     transform: rotate(-10deg);
 }
 
-@keyframes tickets {
-    0% {
-        transform: scale(1.0);
-    }
-    100% {
-        transform: scale(1.2) rotate(-10deg);
-    }
-}
 
 #get-tickets span {
     display: block;
@@ -574,4 +545,50 @@ input {
 #info-map {
     width: 90%;
     display: block;
+}
+
+@media all and (max-width: 789px) {
+    .columns {
+        column-count: 2;
+    }
+    .timetable-day-info {
+        float: none;
+        width: auto;
+        display: block;
+    }
+    .timetable-stages {
+        column-count: 2;
+    }
+}
+
+@media all and (max-width: 499px) {
+    .timetable-stages,
+    .columns {
+        column-count: 1;
+    }
+}
+
+@media all and (max-width: 499px) {
+  .page-title {
+    font-size: 4em;
+  }
+  .page-subtitle {
+    font-size: 1.3em;
+  }
+
+}
+@media all and (min-width: 500px) and (max-width: 1399px) {
+
+
+}
+@media all and (min-width: 1400px) {
+
+}
+@keyframes tickets {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.2) rotate(-10deg);
+    }
 }

@@ -1,0 +1,70 @@
+CACHE MANIFEST
+
+#version 1.0 7-22-2016:1
+
+CACHE:
+
+#images
+/images/large/info/camping.png
+/images/large/info/environment.png
+/images/large/info/food.png
+/images/large/site/abr.png
+/images/large/site/date.png
+/images/large/sponsors.png
+/images/medium/site/map.png
+/images/thumbs/experiences/abr_inlab.png
+/images/thumbs/experiences/abr_radio.png
+/images/thumbs/experiences/intoto.png
+/images/thumbs/experiences/louvana.png
+/images/thumbs/experiences/paravan.png
+/images/thumbs/experiences/sspm.png
+/images/thumbs/lineup/afrobanda.png
+/images/thumbs/lineup/alexis.png
+/images/thumbs/lineup/batida.png
+/images/thumbs/lineup/blueloquat.png
+/images/thumbs/lineup/bombasoul.png
+/images/thumbs/lineup/cassegrain.png
+/images/thumbs/lineup/charis.png
+/images/thumbs/lineup/cusack.png
+/images/thumbs/lineup/cutnbass.png
+/images/thumbs/lineup/danceparty.png
+/images/thumbs/lineup/family_atlantica.png
+/images/thumbs/lineup/funkastic.png
+/images/thumbs/lineup/funktionen.png
+/images/thumbs/lineup/heliocentrics.png
+/images/thumbs/lineup/ioa.png
+/images/thumbs/lineup/jalaba.png
+/images/thumbs/lineup/kineza.png
+/images/thumbs/lineup/maspaventi.png
+/images/thumbs/lineup/patraulea.png
+/images/thumbs/lineup/protesyles.png
+/images/thumbs/lineup/pueblofranco.png
+/images/thumbs/lineup/rootscrew.png
+/images/thumbs/lineup/roscius.png
+/images/thumbs/lineup/sandybrour.png
+/images/thumbs/lineup/serghides.png
+/images/thumbs/lineup/sisamos.png
+/images/thumbs/lineup/sofronis.png
+/images/thumbs/lineup/soundspecies.png
+/images/thumbs/lineup/taichi.png
+/images/thumbs/lineup/yoga.png
+/images/thumbs/site/map-road.png
+
+#internal HTML documents
+/images/large/info/menu.png
+/images/large/site/map.png
+/index-dev.html
+
+#style sheets
+/styles/styles.css
+https://fonts.googleapis.com/css?family=Roboto|Changa+One
+
+#style sheet images
+/images/large/site/flare.png
+/images/large/site/banana-hand.png
+/images/large/site/shadow.png
+
+#javascript files
+
+NETWORK:
+*
