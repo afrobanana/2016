@@ -1,0 +1,26 @@
+{
+  "name": "2016",
+  "version": "1.0.0",
+  "description": "Minifier: https://kangax.github.io/html-minifier/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node utils/images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afrobanana/2016.git"
+  },
+  "author": "rudasn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afrobanana/2016/issues"
+  },
+  "homepage": "https://github.com/afrobanana/2016#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.2",
+    "node-gyp": "^3.4.0",
+    "sharp": "^0.15.1"
+  }
+}
