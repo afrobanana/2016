@@ -3,7 +3,7 @@ var htmlmin = require('gulp-htmlmin');
 
 module.exports = function() {
   console.log('build/html');
-  return gulp.src('_src/index-dev.html')
+  return gulp.src('_src/*.html')
     .pipe(htmlmin({
       collapseWhitespace: true,
       minifyJS: true,
