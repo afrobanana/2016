@@ -6,4 +6,4 @@ var images = require('./images');
 
 css();
 html();
-images();
+// images();
