@@ -22,7 +22,7 @@
   <meta property="description" content="">
   <meta name="keywords" content="The Afro Banana Republic Festival, Cyprus">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Changa+One" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
   <style type="text/css">
     @media all and (max-width: 499px) {
       .page-title {
@@ -98,7 +98,7 @@
 
   <section id="intro" class="page">
     <section id="hero" class="section">
-      <img id="intro-date" src="/images/site/date.png">
+      <img id="intro-date" src="/images/large/site/date.png">
       <section class="section-inner">
         <h1 class="page-title intro-title">The 2016 Afro Banana Republic Festival</h1>
       </section>
@@ -151,7 +151,7 @@
         </div>
         <div>
           <p>
-            Check the <a href="/images/site/map.png">map</a> for
+            Check the <a href="/images/large/site/map.png">map</a> for
             <a href="#lineup/yoga">INTRODUCTION TO YOGA WITH MAYKA</a> <small>(10:00)</small>
           and the
             <a href="#experience/louvana">LOUVANA DISKOI LIVE RECORDING SESSION</a> <small>(15:00)</small>.
@@ -171,7 +171,7 @@
         <h2 class="page-subtitle lineup-page-labels">
           <span class="lineup-entry-label" v-repeat="label:labels" v-html="label"></span>
         </h2>
-        <p><img src="/images/lineup/{{ id }}.png"></p>
+        <p><img src="/images/thumbs/lineup/{{ id }}.png"></p>
         <div class="lineup-page-content">
           <div class="text" v-html="text"></div>
           <div v-repeat="item:embed" class="embed"></div>
@@ -189,9 +189,8 @@
           <div class="experiences-entry columns-item" v-repeat="experienceEntries">
             <h3><a href="#experience/{{ id }}">{{ name }}</a></h3>
             <div class="experiences-entry-image">
-              <a href="#experience/{{ id }}"><img src="/images/experiences/{{ id }}.png"></a>
+              <a href="#experience/{{ id }}"><img src="/images/thumbs/experiences/{{ id }}.png"></a>
             </div>
-            <!-- <div class="experiences-entry-text" v-html="text"></div> -->
           </div>
         </div>
       </section>
@@ -204,7 +203,7 @@
         <h1 class="page-title">
           {{ title }}
         </h1>
-        <p><img src="/images/experiences/{{ id }}.png"></p>
+        <p><img src="/images/thumbs/experiences/{{ id }}.png"></p>
         <div class="experience-page-content">
           <div class="text" v-html="text"></div>
           <div  class="embed" v-repeat="item:embed"></div>
@@ -217,7 +216,7 @@
     <section class="section facilities">
       <section class="section-inner facilities-entries">
         <h1 class="page-title">Your Guide to ABR</h1>
-        <p><a href="images/site/map.png"><img src="images/site/map.png"></a></p>
+        <p><a href="images/large/site/map.png"><img id="info-map" src="images/medium/site/map.png"></a></p>
         <div class="facilities-entry columns">
             <div class="columns-item">
               <h3>Camping &amp; Accommodation</h3>
@@ -250,7 +249,7 @@
     <section class="section">
       <section class="section-inner">
         <h1 class="page-title">Health, Safety &amp; the Environment</h1>
-        <p><img src="/images/info/environment.png"></p>
+        <p><img src="/images/large/info/environment.png"></p>
         <div class="columns">
           <div class="columns-item">
             <h3>Medical Help &amp; Emergencies </h3>
@@ -281,7 +280,7 @@
     <section class="section">
       <section class="section-inner">
         <h1 class="page-title">Food &amp; Drinks</h1>
-        <p><img src="/images/info/food.png"></p>
+        <p><img src="/images/large/info/food.png"></p>
         <div class="columns">
           <div class="columns-item">
             <p>Whether you’re after breakfast, lunch or dinner, a whole team of happy cooks will be on hand throughout the duration of the event to curb your hunger pangs and satiate your taste buds with a range of sweet and savoury delights. With a greater selection of food than ever before, select eateries and street food vendors will be catering to your every need from morning to night.</p>
@@ -313,7 +312,7 @@
         <h1 class="page-title">
         Camping &amp; Accommodation
         </h1>
-        <p><img src="/images/info/camping.png"></p>
+        <p><img src="/images/large/info/camping.png"></p>
         <div class="columns">
             <div class="columns-item">
               <p>Enjoy the glories of the great outdoors and make the most of the two-day experience by pitching up a tent or caravan under the cool shade of leafy eucalyptus and pine trees on the Festival campsite.</p>
@@ -376,8 +375,7 @@
         </div>
         <div class="location-map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.141220505553!2d33.40029831443276!3d34.90290537987106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de04a7d9365cb9%3A0xbd7734f7a94bf975!2sThe+2016+Afro+Banana+Republic!5e0!3m2!1sen!2sus!4v1468928850728" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
-          <a href="images/site/map.png"><img src="images/site/map-road.png"></a>
-          <!-- <a href="https://goo.gl/maps/4djk7" target="_blank"><span>Google Map</span><img src="images/bg_location.jpg"></a> -->
+          <a href="images/large/site/map.png"><img src="images/thumbs/site/map-road.png"></a>
         </div>
         <div class="columns">
           <div class="columns-item location-from-nicosia">
@@ -424,11 +422,11 @@
             </p>
           </div>
           <div class="columns-item">
-            <img src="/images/site/abr.png">
+            <img src="/images/large/site/abr.png">
           </div>
         </div>
         <p>
-          <img src="/images/sponsors.png">
+          <img src="/images/large/sponsors.png">
         </p>
       </section>
     </section>

@@ -383,7 +383,7 @@ input {
 
 
 #hero {
-    background-image: url("images/site/flare.png"), url("images/site/banana-hand.png"), url("images/site/shadow.png"), linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%);
+    background-image: url("/images/large/site/flare.png"), url("/images/large/site/banana-hand.png"), url("/images/large/site/shadow.png"), linear-gradient(to bottom, #1B8F9D 0, #7E9D97 13%, #BFB9A6 86%, #E7BB90 94%, #EFB176 100%);
     background-blend-mode: screen, normal, multiply;
     background-repeat: no-repeat;
     background-size: contain;
@@ -420,6 +420,9 @@ input {
     box-sizing: border-box;
     text-align: center;
     font-weight: bold;
+}
+.experiences-entry img {
+    width: 100%;
 }
 
 .experiences-entry-text {
@@ -567,4 +570,8 @@ input {
 
 #intro .page-title {
     display: none;
+}
+#info-map {
+    width: 90%;
+    display: block;
 }
