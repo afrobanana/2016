@@ -565,16 +565,21 @@ input {
     .columns {
         column-count: 1;
     }
-}
 
-@media all and (max-width: 499px) {
-  .page-title {
-    font-size: 4em;
-  }
-  .page-subtitle {
-    font-size: 1.3em;
-  }
-
+    .page-title {
+        font-size: 4em;
+    }
+    .page-subtitle {
+        font-size: 1.3em;
+    }
+    .experience-page .text,
+    .lineup-page .text,
+    .experience-page .embed,
+    .lineup-page .embed {
+        margin: 0 0 1em 0;
+        float: none;
+        width: 100%;
+    }
 }
 @media all and (min-width: 500px) and (max-width: 1399px) {
 
