@@ -143,7 +143,7 @@
         <h2 class="page-subtitle lineup-page-labels">
           <span class="lineup-entry-label" v-repeat="label:labels" v-html="label"></span>
         </h2>
-        <p><img src="/images/thumbs/lineup/{{ id }}.png"></p>
+        <p><img data-src="/images/large/lineup/{{ id }}.png"></p>
         <div class="lineup-page-content">
           <div class="text" v-html="text"></div>
           <div v-repeat="item:embed" class="embed"></div>
@@ -1341,7 +1341,18 @@
         console.log('modal show', this.id);
         this.hidden = false;
         this.visible = !this.hidden;
-        $('body').addClass('modal-visible').removeClass('modal-hidden');
+
+        requestAnimationFrame(function() {
+          $('body').addClass('modal-visible').removeClass('modal-hidden');
+
+          var item = modal.getItem();
+          $('.embed', modal.getEl()).each(function(i) {
+            $(this).html( item.embed[i] );
+          });
+          $('img[data-src]', modal.getEl()).each(function(i) {
+            $(this).attr('src', this.getAttribute('data-src') );
+          });
+        });
       },
       set: function(id, path) {
         console.log('modal set', id);
@@ -1424,16 +1435,7 @@
 
       if ($el) {
         modal.set(id, path);
-        requestAnimationFrame(function() {
-          modal.show();
-          var item = modal.getItem();
-          if (item && item.embed &&
-              (path[0] === 'lineup' || path[0] === 'experience')) {
-            $('.embed', modal.getEl()).each(function(i) {
-              $(this).html( item.embed[i] );
-            });
-          }
-        });
+        modal.show();
       }
       else {
         modal.unset();

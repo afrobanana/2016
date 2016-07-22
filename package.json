@@ -4,8 +4,7 @@
   "description": "Minifier: https://kangax.github.io/html-minifier/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "min": "node utils/css"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,8 +20,6 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.11",
     "gulp-htmlmin": "^2.0.0",
-    "gulp-imagemin": "^3.0.2",
-    "gulp-more-css": "^1.0.0",
     "gulp-sharp": "^0.1.0",
     "node-gyp": "^3.4.0",
     "sharp": "^0.15.1"

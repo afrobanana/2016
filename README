@@ -1,1 +1,9 @@
-Minifier: https://kangax.github.io/html-minifier/
+# 2016
+
+## Build
+
+Minifies CSS, HTML, and optimizes images (thumbnails, etc).
+
+```
+node utils/build
+```
