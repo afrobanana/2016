@@ -203,13 +203,18 @@ input {
     display: none;
 }
 
+/* social icons */
 .nav-global.minimize li:nth-child(7) ~ li {
     display: inline-block;
     float: right;
     margin-right: 0.5em;
 }
-
+.nav-global.minimize li:nth-child(7) ~ li a {
+    background-color: inherit;
+    padding: 0;
+}
 .nav-global.minimize .nav-mobile {
+    cursor: pointer;
     float: left !important;
     margin-left: 1em;
 }
@@ -219,7 +224,14 @@ input {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.nav-global.expand li a,
+.nav-global.expand li a {
+    max-width: 60%;
+    margin: 0.5em auto;
+    padding: 1em 0;
+    background-color: rgba(255,255,255,0.2);
+    text-decoration: none;
+}
+.nav-global.expand li a ,
 .nav-global.expand li {
     display: block;
 }
