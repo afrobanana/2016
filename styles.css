@@ -89,6 +89,7 @@ input {
     break-inside: avoid;
     box-sizing: border-box;
     vertical-align: top;
+    display: inline-block;
 }
 
 .columns-item h3,
@@ -503,7 +504,9 @@ input {
 #about__credits .columns-item p {
     margin-bottom: 0.5em;
 }
-
+#about .columns {
+    column-count: 2;
+}
 
 #get-tickets {
     text-decoration: none;
@@ -519,6 +522,7 @@ input {
     height: 30px;
     width: 30px;
     transition: all 100ms;
+    transform: translate3d(0,0,0);
     transform-origin: 0 0;
     animation: tickets 2s ease-in-out infinite alternate;
 }
