@@ -13,7 +13,8 @@ module.exports = function() {
     }))
     .pipe(gulp.dest('images/thumbs'));
 
-  gulp.src( '_src/images/**/*.+(jpeg|jpg|png|tiff|webp)' )
+  // gulp.src( '_src/images/**/*.+(jpeg|jpg|png|tiff|webp)' )
+  gulp.src('_src/images/site/map.png' )
     .pipe(gulpSharp({
       resize : [900, null],
       crop: 'center',
@@ -21,12 +22,12 @@ module.exports = function() {
       quality : 60,
       progressive : true
     }))
-    .pipe(gulp.dest('images/medium'));
+    .pipe(gulp.dest('images/medium/site'));
 
 
   gulp.src( '_src/images/**/*.+(jpeg|jpg|png|tiff|webp)' )
     .pipe(gulpSharp({
-      resize: [],
+      resize: [1300, null],
       max : true,
       quality : 80,
       progressive : true
