@@ -326,7 +326,7 @@ input {
 .lineup-entry-label {
     text-transform: uppercase;
     display: inline-block;
-    margin: 0.2em 0.5em;
+    margin: .2em .5em  0 0;
     font-style: normal;
 }
 
@@ -561,16 +561,22 @@ input {
 }
 
 @media all and (max-width: 499px) {
+    .is-modal .page-title, .modal-close {
+        font-size: 2em;
+    }
+    .modal-close {
+        padding: 8px 16px;
+    }
     .timetable-stages,
     .columns {
         column-count: 1;
     }
 
     .page-title {
-        font-size: 4em;
+        font-size: 3em;
     }
     .page-subtitle {
-        font-size: 1.3em;
+        font-size: 1em;
     }
     .experience-page .text,
     .lineup-page .text,
