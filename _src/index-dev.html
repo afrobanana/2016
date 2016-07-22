@@ -175,7 +175,7 @@
         <h1 class="page-title">
           {{ title }}
         </h1>
-        <p><img src="/images/thumbs/experiences/{{ id }}.png"></p>
+        <p><img data-src="/images/large/experiences/{{ id }}.png"></p>
         <div class="experience-page-content">
           <div class="text" v-html="text"></div>
           <div  class="embed" v-repeat="item:embed"></div>
@@ -221,7 +221,7 @@
     <section class="section">
       <section class="section-inner">
         <h1 class="page-title">Health, Safety &amp; the Environment</h1>
-        <p><img src="/images/large/info/environment.png"></p>
+        <p><img data-src="/images/large/info/environment.png"></p>
         <div class="columns">
           <div class="columns-item">
             <h3>Medical Help &amp; Emergencies </h3>
@@ -252,7 +252,7 @@
     <section class="section">
       <section class="section-inner">
         <h1 class="page-title">Food &amp; Drinks</h1>
-        <p><img src="/images/large/info/food.png"></p>
+        <p><img data-src="/images/large/info/food.png"></p>
         <div class="columns">
           <div class="columns-item">
             <p>Whether you’re after breakfast, lunch or dinner, a whole team of happy cooks will be on hand throughout the duration of the event to curb your hunger pangs and satiate your taste buds with a range of sweet and savoury delights. With a greater selection of food than ever before, select eateries and street food vendors will be catering to your every need from morning to night.</p>
@@ -284,7 +284,7 @@
         <h1 class="page-title">
         Camping &amp; Accommodation
         </h1>
-        <p><img src="/images/large/info/camping.png"></p>
+        <p><img data-src="/images/large/info/camping.png"></p>
         <div class="columns">
             <div class="columns-item">
               <p>Enjoy the glories of the great outdoors and make the most of the two-day experience by pitching up a tent or caravan under the cool shade of leafy eucalyptus and pine trees on the Festival campsite.</p>
@@ -1327,18 +1327,15 @@
         var item = this.path.reduce(function(sum, current) {
           return (sum || abr.$data)[current];
         }, null);
-        console.warn('getItem', this.id, item);
         return item;
       },
       hide: function() {
-        console.log('modal hide', this.id);
         this.hidden = true;
         this.visible = !this.hidden;
         $('body').addClass('modal-hidden').removeClass('modal-visible');
         $('.embed', this.getEl()).html('');
       },
       show: function() {
-        console.log('modal show', this.id);
         this.hidden = false;
         this.visible = !this.hidden;
 
@@ -1355,7 +1352,6 @@
         });
       },
       set: function(id, path) {
-        console.log('modal set', id);
         this.unset();
         this.id = id;
         this.path = path;
@@ -1363,7 +1359,6 @@
       },
       unset: function() {
         if (this.id) {
-          console.log('modal unset', this.id);
           this.hide();
           this.getEl().removeClass('is-modal--active');
           this.id = null;
@@ -1400,7 +1395,6 @@
         if (!heights.every(function(h) { return h > 0 })) {
           return;
         }
-        console.warn(this, heights);
         maxHeight = Math.max.apply(Math, heights);
 
         items.each(function(i) {

@@ -1,13 +1,10 @@
 CACHE MANIFEST
 
-#version 1.0 7-22-2016:2
+#version 1.0 7-22-2016:4
 
 CACHE:
 
 #images
-/images/large/info/camping.png
-/images/large/info/environment.png
-/images/large/info/food.png
 /images/large/site/abr.png
 /images/large/site/date.png
 /images/large/sponsors.png
@@ -51,9 +48,7 @@ CACHE:
 /images/thumbs/site/map-road.png
 
 #internal HTML documents
-/images/large/info/menu.png
 /images/large/site/map.png
-/index-dev.html
 
 #style sheets
 /styles/styles.css
