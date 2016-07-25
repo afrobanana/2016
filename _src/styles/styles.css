@@ -97,6 +97,17 @@ input {
     color: #14626b;
     font-weight: bold;
 }
+
+.btn {
+    background-color: rgba(68,148,154,.53);
+    padding: .5em 1em;
+    letter-spacing: 1px;
+    font-size: .9em;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
 /************************************************
  * page
  /***********************************************/
@@ -421,6 +432,12 @@ input {
 .experiences-entry {
     position: relative;
     background: none;
+    transform: translate3d(0,0,0);
+    transform-origin: 50% 50%;
+}
+
+.experiences-entry:hover {
+    animation: experiences 1s ease-in-out infinite alternate;
 }
 
 .experiences-entry h3 {
@@ -578,7 +595,7 @@ input {
     }
 }
 
-@media all and (max-width: 499px) {
+@media all and (max-width: 599px) {
     .is-modal .page-title, .modal-close {
         font-size: 2em;
     }
@@ -587,7 +604,7 @@ input {
     }
     .timetable-stages,
     .columns {
-        column-count: 1;
+        column-count: 1 !important;
     }
 
     .page-title {
@@ -618,5 +635,14 @@ input {
     }
     100% {
         transform: scale(1.2) rotate(-10deg);
+    }
+}
+
+@keyframes experiences {
+    0% {
+        transform: rotate(-1deg);
+    }
+    100% {
+        transform: rotate(1deg);
     }
 }
