@@ -1505,6 +1505,19 @@
     })(window,document,window['_fs_namespace'],'script','user');
     FS.identify(getId(), { displayName: getId() });
   </script>
-
+  <script type="text/javascript">
+    // Check if a new cache is available on page load.
+    var appCache = window.applicationCache;
+    window.addEventListener('load', function(e) {
+      if (appCache) {
+        appCache.addEventListener('updateready', function(e) {
+          if (appCache.status === appCache.UPDATEREADY) {
+            appCache.swapCache();
+            window.location.reload();
+          }
+        }, false);
+      }
+    }, false);
+  </script>
 </body>
 </html>
