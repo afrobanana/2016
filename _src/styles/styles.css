@@ -453,7 +453,8 @@ input {
     font-weight: bold;
 }
 .experiences-entry img {
-    width: 100%;
+    display: block;
+    width: 420px;
 }
 
 .experiences-entry-text {
@@ -596,11 +597,8 @@ i.modal-close {
 }
 
 @media all and (max-width: 599px) {
-    .is-modal .page-title, .modal-close {
+    .is-modal .page-title {
         font-size: 2em;
-    }
-    .modal-close {
-        padding: 8px 16px;
     }
     .timetable-stages,
     .columns {
