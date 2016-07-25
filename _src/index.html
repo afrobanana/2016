@@ -1434,7 +1434,7 @@
       else {
         modal.unset();
       }
-
+      capture('pageview', window.location.toString());
       hashchanges++;
     }).trigger('hashchange').trigger('resize');
 
@@ -1443,6 +1443,13 @@
   </script>
 
   <!-- Analytics -->
+  <script type="text/javascript">
+    function capture(name, value) {
+      if (typeof ga === 'function') {
+        ga('send', name, value);
+      }
+    }
+  </script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -1450,7 +1457,6 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-81269127-1', 'auto');
-  ga('send', 'pageview');
   ga('set', 'userId', getId());
   </script>
   <script>
