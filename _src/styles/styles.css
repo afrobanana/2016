@@ -401,7 +401,7 @@ input {
     position: absolute;
     top: 260px;
     right: 12%;
-    background: rgba(34, 34, 34, 0.25);
+    background: rgba(34, 34, 34, 0.15);
     border-radius: 20px;
     box-sizing: border-box;
 }
@@ -496,8 +496,8 @@ input {
 .is-modal .columns-item {
     display: inline-block;
 }
-
-.modal-close {
+/*
+i.modal-close {
     display: none;
     cursor: pointer;
     position: fixed;
@@ -512,7 +512,7 @@ input {
     background: rgba(0, 0, 0, 0.2);
     padding: 8px 20px;
     border-radius: 50%;
-}
+}*/
 
 .modal-visible {
     overflow: hidden;
@@ -523,11 +523,11 @@ input {
     opacity: 1;
     background-color: rgba(255, 255, 255, 0.6);
 }
-
-.modal-visible .modal-close {
+/*
+.modal-visible i.modal-close {
     display: block;
 }
-
+*/
 .modal-visible .nav-global {
     z-index: 9999999;
     font-size: 0.8em;
