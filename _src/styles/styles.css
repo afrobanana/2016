@@ -465,6 +465,7 @@ input {
 }
 
 .is-modal .page-title {
+    margin-top: 16px;
     font-size: 3em;
 }
 
@@ -508,6 +509,11 @@ input {
 
 .modal-visible .modal-close {
     display: block;
+}
+
+.modal-visible .nav-global {
+    z-index: 9999999;
+    font-size: 0.8em;
 }
 
 #about__credits .columns-item p {

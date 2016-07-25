@@ -1369,7 +1369,6 @@
 
         requestAnimationFrame(function() {
           $('body').addClass('modal-visible').removeClass('modal-hidden');
-
           var item = modal.getItem();
           $('.embed', modal.getEl()).each(function(i) {
             $(this).html( item.embed[i] );
@@ -1377,6 +1376,9 @@
           $('img[data-src]', modal.getEl()).each(function(i) {
             $(this).attr('src', this.getAttribute('data-src') );
           });
+          setTimeout(function() {
+            $('.nav-global').addClass('headroom--pinned').addClass('headroom--top').removeClass('headroom--not-top').removeClass('headroom--unpinned');
+          }, 500);
         });
       },
       set: function(id, path) {
