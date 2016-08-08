@@ -1,10 +1,11 @@
 {
   "name": "2016",
   "version": "1.0.0",
-  "description": "Minifier: https://kangax.github.io/html-minifier/",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node node_modules/http-server/bin/http-server -p 9992"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "gulp-clean-css": "^2.0.11",
     "gulp-htmlmin": "^2.0.0",
     "gulp-sharp": "^0.1.0",
+    "http-server": "^0.9.0",
     "node-gyp": "^3.4.0",
     "sharp": "^0.15.1"
   }
